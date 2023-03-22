@@ -83,6 +83,26 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap jelenlet_ell_switch {
+            get {
+                object obj = ResourceManager.GetObject("jelenlet_ell_switch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jelenlet_meg_switch {
+            get {
+                object obj = ResourceManager.GetObject("jelenlet_meg_switch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kep_jobb_orarend {
             get {
                 object obj = ResourceManager.GetObject("kep_jobb_orarend", resourceCulture);
@@ -136,6 +156,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap logo_small {
             get {
                 object obj = ResourceManager.GetObject("logo_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap naploheader {
+            get {
+                object obj = ResourceManager.GetObject("naploheader", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -248,6 +278,36 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap switch_top {
             get {
                 object obj = ResourceManager.GetObject("switch_top", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switchheader {
+            get {
+                object obj = ResourceManager.GetObject("switchheader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switchorange {
+            get {
+                object obj = ResourceManager.GetObject("switchorange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap switchtantargy {
+            get {
+                object obj = ResourceManager.GetObject("switchtantargy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

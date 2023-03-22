@@ -48,7 +48,6 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.register_button = new CustomControls.RJControls.RJButton();
             this.conTeachHelper = new System.Data.Odbc.OdbcConnection();
-            this.felhasznalok1 = new WindowsFormsApp1.felhasznalok();
             this.dataViewManager1 = new System.Data.DataViewManager();
             this.cmdBejelentkezes = new System.Data.Odbc.OdbcCommand();
             this.odbcSelectCommand1 = new System.Data.Odbc.OdbcCommand();
@@ -71,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.felhasznalok1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -391,29 +389,16 @@
             // conTeachHelper
             // 
             this.conTeachHelper.ConnectionString = "Dsn=localhost;uid=root;database=teachhelper;port=3306";
-            // 
-            // felhasznalok1
-            // 
-            this.felhasznalok1.DataSetName = "felhasznalok";
-            this.felhasznalok1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataViewManager1
-            // 
-            this.dataViewManager1.DataSet = this.felhasznalok1;
-            this.dataViewManager1.DataViewSettingCollectionString = "<DataViewSettingCollectionString><tanar Sort=\"\" RowFilter=\"\" RowStateFilter=\"Curr" +
-    "entRows\"/><Table Sort=\"\" RowFilter=\"\" RowStateFilter=\"CurrentRows\"/></DataViewSe" +
-    "ttingCollectionString>";
+
             // 
             // cmdBejelentkezes
             // 
-            this.cmdBejelentkezes.CommandText = "SELECT COUNT(felhasznaloNev) AS c_felh\r\nFROM     tanar\r\nWHERE  (felhasznaloNev = " +
-    "?) AND (jelszo = ?);";
+            this.cmdBejelentkezes.CommandText = "SELECT COUNT(tanar_felhasznalonev) AS c_felh\r\nFROM     tanar\r\nWHERE  (tanar_felha" +
+    "sznalonev = ?) AND (tanar_jelszo = ?);";
             this.cmdBejelentkezes.Connection = this.conTeachHelper;
             this.cmdBejelentkezes.Parameters.AddRange(new System.Data.Odbc.OdbcParameter[] {
             new System.Data.Odbc.OdbcParameter("felhasznalo_nev", System.Data.Odbc.OdbcType.NVarChar, 100),
-            new System.Data.Odbc.OdbcParameter("jelszo", System.Data.Odbc.OdbcType.NVarChar, 100),
-            new System.Data.Odbc.OdbcParameter("admin", System.Data.Odbc.OdbcType.NVarChar, 10, System.Data.ParameterDirection.InputOutput, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null),
-            new System.Data.Odbc.OdbcParameter("adminok", System.Data.Odbc.OdbcType.NVarChar, 20, System.Data.ParameterDirection.InputOutput, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, null)});
+            new System.Data.Odbc.OdbcParameter("jelszo", System.Data.Odbc.OdbcType.NVarChar, 100)});
             // 
             // odbcSelectCommand1
             // 
@@ -465,7 +450,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.felhasznalok1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,7 +472,6 @@
         /*private CustomControls.RJControls.RJButton login_button;
         private CustomControls.RJControls.RJButton reg_button;*/
         private System.Data.Odbc.OdbcConnection conTeachHelper;
-        private felhasznalok felhasznalok1;
         private System.Data.DataViewManager dataViewManager1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private CustomControls.RJControls.RJButton register_button;

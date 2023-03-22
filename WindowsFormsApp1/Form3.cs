@@ -58,8 +58,15 @@ namespace WindowsFormsApp1
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            Form4 f2 = new Form4();
-            f2.Show();
+            Form4 f4 = new Form4();
+            f4.Show();
+            this.Hide();
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            Form6 f6 = new Form6();
+            f6.Show();
             this.Hide();
         }
     }

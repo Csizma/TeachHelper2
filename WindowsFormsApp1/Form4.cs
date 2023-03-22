@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static WindowsFormsApp1.AktualisFelhasznalok;
 
 namespace WindowsFormsApp1
 {
@@ -18,102 +17,58 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        private void Form6_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'teachhelperDataSet5.osztaly' table. You can move, or remove it, as needed.
+            this.osztalyTableAdapter.Fill(this.AdatTablak.osztaly);
+            // TODO: This line of code loads data into the 'teachhelperDataSet5.tantargy' table. You can move, or remove it, as needed.
+            this.tantargyTableAdapter1.Fill(this.AdatTablak.tantargy);
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            odbcConnection1.Open();
-            AktualisFelhasznalok.orak = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-            AktualisFelhasznalok.nap = Convert.ToString(dataGridView1.SelectedCells[0].ColumnIndex.ToString());
-            AktualisFelhasznalok.ora = dataGridView1.SelectedCells[0].Value;
-            
-            System.Data.Odbc.OdbcDataReader myreader;
-            odbcCommand3.Parameters[0].Value = AktualisFelhasznalok.ora;
-            odbcCommand3.Parameters[1].Value = AktualisFelhasznalok.nap;
-            odbcCommand3.Parameters[2].Value = AktualisFelhasznalok.osztaly;
-            odbcCommand3.Parameters[3].Value = AktualisFelhasznalok.orak;
-            /*MessageBox.Show(Convert.ToString(odbcCommand3.Parameters[0].Value));
-            MessageBox.Show(Convert.ToString(odbcCommand3.Parameters[1].Value));
-            MessageBox.Show(Convert.ToString(odbcCommand3.Parameters[2].Value));
-            MessageBox.Show(Convert.ToString(odbcCommand3.Parameters[3].Value));*/
-            myreader = odbcCommand3.ExecuteReader();
-            string test;
-
-            if (myreader.Read())
-            {
-                test = myreader.GetString(myreader.GetOrdinal("naplo"));
-                int test2 = Convert.ToInt16(test);
-                Console.WriteLine(test2);
-                if (test2 == 1)
-                {
-                    MessageBox.Show("Ez az óra már naplózásra került!", "TeachHelper");
-                    odbcConnection1.Close();
-                }
-                else
-                {
-
-
-                    odbcConnection1.Close();
-                        Form5 f2 = new Form5();
-                        f2.Show();
-
-                }
-            }
-        }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             timer1.Start();
-            odbcConnection1.Open();
-            odbcCommand1.Parameters[0].Value = AktualisFelhasznalok.aktualis_felhasznalo;
-
-            odbcCommand1.ExecuteNonQuery();
-            try
-            {
-                this.orarendTableAdapter.Fill(this.teachhelperDataSet5.orarend);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-            odbcDataAdapter1.Fill(this.teachhelperDataSet5, AktualisFelhasznalok.aktualis_felhasznalo);
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Orange;
-            odbcConnection1.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            odbcConnection1.Open();
-            odbcCommand1.ExecuteNonQuery();
-            odbcConnection1.Close();
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
             datum.Text = DateTime.Now.ToShortDateString();
             ido.Text = DateTime.Now.ToShortTimeString();
+            DateTime now = DateTime.Now;
+            string mai_nap = Convert.ToString(now.DayOfWeek);
+            if (mai_nap == "Monday")
+            { 
+            nap.Text = "Hétfő";
+            }
+            else if (mai_nap == "Tuesday")
+            {
+                nap.Text = "Kedd";
+            }
+            else if (mai_nap == "Wednesday")
+            {
+                nap.Text = "Szerda";
+            }
+            else if (mai_nap == "Thursday")
+            {
+                nap.Text = "Csütörtök";
+            }
+            else if (mai_nap == "Friday")
+            {
+                nap.Text = "Péntek";
+            }
+            else if (mai_nap == "Saturday")
+            {
+                nap.Text = "Szombat";
+            }
+            else if (mai_nap == "Sunday")
+            {
+                nap.Text = "Vasárnap";
+            }
+            AktualisFelhasznalok.ora = DateTime.Now.ToShortTimeString();
+            AktualisFelhasznalok.datum = DateTime.Now.ToShortDateString();
+            AktualisFelhasznalok.nap = nap.Text;
         }
 
-        private void orarend1BindingSource_CurrentChanged(object sender, EventArgs e)
+        private void rjButton1_Click(object sender, EventArgs e)
         {
-                    }
+            AktualisFelhasznalok.aktualis_tantargy = tantargy.Text;
+            AktualisFelhasznalok.aktualis_osztaly = osztaly.Text;
+            Form5 f5 = new Form5();
+            f5.Show();
+            this.Hide();
+        }
     }
 }

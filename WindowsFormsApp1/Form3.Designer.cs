@@ -31,9 +31,9 @@
             this.tabelLayoutPanel1 = new WindowsFormsApp1.TabelLayoutPanel();
             this.tabelLayoutPanel2 = new WindowsFormsApp1.TabelLayoutPanel();
             this.tabelLayoutPanel3 = new WindowsFormsApp1.TabelLayoutPanel();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.tabelLayoutPanel1.SuspendLayout();
@@ -100,28 +100,6 @@
             this.tabelLayoutPanel3.Size = new System.Drawing.Size(1752, 441);
             this.tabelLayoutPanel3.TabIndex = 1;
             // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.switch_orarend;
-            this.rjButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 0;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(360, 126);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(10);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(330, 175);
-            this.rjButton1.TabIndex = 3;
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.switch_form;
@@ -144,11 +122,33 @@
             this.panel2.Size = new System.Drawing.Size(1752, 131);
             this.panel2.TabIndex = 0;
             // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjButton1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.jelenlet_ell_switch;
+            this.rjButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 0;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(360, 126);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(10);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(330, 175);
+            this.rjButton1.TabIndex = 3;
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
             // rjButton2
             // 
             this.rjButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.rjButton2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.switch_orarend_keszit;
+            this.rjButton2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.jelenlet_meg_switch;
             this.rjButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rjButton2.BorderColor = System.Drawing.Color.Orange;
             this.rjButton2.BorderRadius = 0;
@@ -164,6 +164,7 @@
             this.rjButton2.TabIndex = 4;
             this.rjButton2.TextColor = System.Drawing.Color.White;
             this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
             // rjButton3
             // 

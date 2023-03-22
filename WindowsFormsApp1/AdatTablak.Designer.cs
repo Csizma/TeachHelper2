@@ -20,25 +20,25 @@ namespace WindowsFormsApp1 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("teachhelperDataSet4")]
+    [global::System.Xml.Serialization.XmlRootAttribute("AdatTablak")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class teachhelperDataSet4 : global::System.Data.DataSet {
+    public partial class AdatTablak : global::System.Data.DataSet {
         
-        private n_orakDataTable tablen_orak;
+        private diakDataTable tablediak;
         
-        private osztalyokDataTable tableosztalyok;
+        private jelenletDataTable tablejelenlet;
+        
+        private osztalyDataTable tableosztaly;
         
         private tanarDataTable tabletanar;
         
-        private tanulokDataTable tabletanulok;
-        
-        private orarendDataTable tableorarend;
+        private tantargyDataTable tabletantargy;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public teachhelperDataSet4() {
+        public AdatTablak() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected teachhelperDataSet4(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected AdatTablak(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -62,20 +62,20 @@ namespace WindowsFormsApp1 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["n_orak"] != null)) {
-                    base.Tables.Add(new n_orakDataTable(ds.Tables["n_orak"]));
+                if ((ds.Tables["diak"] != null)) {
+                    base.Tables.Add(new diakDataTable(ds.Tables["diak"]));
                 }
-                if ((ds.Tables["osztalyok"] != null)) {
-                    base.Tables.Add(new osztalyokDataTable(ds.Tables["osztalyok"]));
+                if ((ds.Tables["jelenlet"] != null)) {
+                    base.Tables.Add(new jelenletDataTable(ds.Tables["jelenlet"]));
+                }
+                if ((ds.Tables["osztaly"] != null)) {
+                    base.Tables.Add(new osztalyDataTable(ds.Tables["osztaly"]));
                 }
                 if ((ds.Tables["tanar"] != null)) {
                     base.Tables.Add(new tanarDataTable(ds.Tables["tanar"]));
                 }
-                if ((ds.Tables["tanulok"] != null)) {
-                    base.Tables.Add(new tanulokDataTable(ds.Tables["tanulok"]));
-                }
-                if ((ds.Tables["orarend"] != null)) {
-                    base.Tables.Add(new orarendDataTable(ds.Tables["orarend"]));
+                if ((ds.Tables["tantargy"] != null)) {
+                    base.Tables.Add(new tantargyDataTable(ds.Tables["tantargy"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -99,9 +99,9 @@ namespace WindowsFormsApp1 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public n_orakDataTable n_orak {
+        public diakDataTable diak {
             get {
-                return this.tablen_orak;
+                return this.tablediak;
             }
         }
         
@@ -109,9 +109,19 @@ namespace WindowsFormsApp1 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public osztalyokDataTable osztalyok {
+        public jelenletDataTable jelenlet {
             get {
-                return this.tableosztalyok;
+                return this.tablejelenlet;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public osztalyDataTable osztaly {
+            get {
+                return this.tableosztaly;
             }
         }
         
@@ -129,19 +139,9 @@ namespace WindowsFormsApp1 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tanulokDataTable tanulok {
+        public tantargyDataTable tantargy {
             get {
-                return this.tabletanulok;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public orarendDataTable orarend {
-            get {
-                return this.tableorarend;
+                return this.tabletantargy;
             }
         }
         
@@ -187,7 +187,7 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            teachhelperDataSet4 cln = ((teachhelperDataSet4)(base.Clone()));
+            AdatTablak cln = ((AdatTablak)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -212,20 +212,20 @@ namespace WindowsFormsApp1 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["n_orak"] != null)) {
-                    base.Tables.Add(new n_orakDataTable(ds.Tables["n_orak"]));
+                if ((ds.Tables["diak"] != null)) {
+                    base.Tables.Add(new diakDataTable(ds.Tables["diak"]));
                 }
-                if ((ds.Tables["osztalyok"] != null)) {
-                    base.Tables.Add(new osztalyokDataTable(ds.Tables["osztalyok"]));
+                if ((ds.Tables["jelenlet"] != null)) {
+                    base.Tables.Add(new jelenletDataTable(ds.Tables["jelenlet"]));
+                }
+                if ((ds.Tables["osztaly"] != null)) {
+                    base.Tables.Add(new osztalyDataTable(ds.Tables["osztaly"]));
                 }
                 if ((ds.Tables["tanar"] != null)) {
                     base.Tables.Add(new tanarDataTable(ds.Tables["tanar"]));
                 }
-                if ((ds.Tables["tanulok"] != null)) {
-                    base.Tables.Add(new tanulokDataTable(ds.Tables["tanulok"]));
-                }
-                if ((ds.Tables["orarend"] != null)) {
-                    base.Tables.Add(new orarendDataTable(ds.Tables["orarend"]));
+                if ((ds.Tables["tantargy"] != null)) {
+                    base.Tables.Add(new tantargyDataTable(ds.Tables["tantargy"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -260,16 +260,22 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablen_orak = ((n_orakDataTable)(base.Tables["n_orak"]));
+            this.tablediak = ((diakDataTable)(base.Tables["diak"]));
             if ((initTable == true)) {
-                if ((this.tablen_orak != null)) {
-                    this.tablen_orak.InitVars();
+                if ((this.tablediak != null)) {
+                    this.tablediak.InitVars();
                 }
             }
-            this.tableosztalyok = ((osztalyokDataTable)(base.Tables["osztalyok"]));
+            this.tablejelenlet = ((jelenletDataTable)(base.Tables["jelenlet"]));
             if ((initTable == true)) {
-                if ((this.tableosztalyok != null)) {
-                    this.tableosztalyok.InitVars();
+                if ((this.tablejelenlet != null)) {
+                    this.tablejelenlet.InitVars();
+                }
+            }
+            this.tableosztaly = ((osztalyDataTable)(base.Tables["osztaly"]));
+            if ((initTable == true)) {
+                if ((this.tableosztaly != null)) {
+                    this.tableosztaly.InitVars();
                 }
             }
             this.tabletanar = ((tanarDataTable)(base.Tables["tanar"]));
@@ -278,16 +284,10 @@ namespace WindowsFormsApp1 {
                     this.tabletanar.InitVars();
                 }
             }
-            this.tabletanulok = ((tanulokDataTable)(base.Tables["tanulok"]));
+            this.tabletantargy = ((tantargyDataTable)(base.Tables["tantargy"]));
             if ((initTable == true)) {
-                if ((this.tabletanulok != null)) {
-                    this.tabletanulok.InitVars();
-                }
-            }
-            this.tableorarend = ((orarendDataTable)(base.Tables["orarend"]));
-            if ((initTable == true)) {
-                if ((this.tableorarend != null)) {
-                    this.tableorarend.InitVars();
+                if ((this.tabletantargy != null)) {
+                    this.tabletantargy.InitVars();
                 }
             }
         }
@@ -295,32 +295,38 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "teachhelperDataSet4";
+            this.DataSetName = "AdatTablak";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/teachhelperDataSet4.xsd";
+            this.Namespace = "http://tempuri.org/AdatTablak.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablen_orak = new n_orakDataTable();
-            base.Tables.Add(this.tablen_orak);
-            this.tableosztalyok = new osztalyokDataTable();
-            base.Tables.Add(this.tableosztalyok);
+            this.tablediak = new diakDataTable();
+            base.Tables.Add(this.tablediak);
+            this.tablejelenlet = new jelenletDataTable();
+            base.Tables.Add(this.tablejelenlet);
+            this.tableosztaly = new osztalyDataTable();
+            base.Tables.Add(this.tableosztaly);
             this.tabletanar = new tanarDataTable();
             base.Tables.Add(this.tabletanar);
-            this.tabletanulok = new tanulokDataTable();
-            base.Tables.Add(this.tabletanulok);
-            this.tableorarend = new orarendDataTable();
-            base.Tables.Add(this.tableorarend);
+            this.tabletantargy = new tantargyDataTable();
+            base.Tables.Add(this.tabletantargy);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializen_orak() {
+        private bool ShouldSerializediak() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeosztalyok() {
+        private bool ShouldSerializejelenlet() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeosztaly() {
             return false;
         }
         
@@ -332,13 +338,7 @@ namespace WindowsFormsApp1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializetanulok() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeorarend() {
+        private bool ShouldSerializetantargy() {
             return false;
         }
         
@@ -353,7 +353,7 @@ namespace WindowsFormsApp1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            teachhelperDataSet4 ds = new teachhelperDataSet4();
+            AdatTablak ds = new AdatTablak();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -398,35 +398,39 @@ namespace WindowsFormsApp1 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void n_orakRowChangeEventHandler(object sender, n_orakRowChangeEvent e);
+        public delegate void diakRowChangeEventHandler(object sender, diakRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void osztalyokRowChangeEventHandler(object sender, osztalyokRowChangeEvent e);
+        public delegate void jelenletRowChangeEventHandler(object sender, jelenletRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void osztalyRowChangeEventHandler(object sender, osztalyRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void tanarRowChangeEventHandler(object sender, tanarRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void tanulokRowChangeEventHandler(object sender, tanulokRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void orarendRowChangeEventHandler(object sender, orarendRowChangeEvent e);
+        public delegate void tantargyRowChangeEventHandler(object sender, tantargyRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class n_orakDataTable : global::System.Data.TypedTableBase<n_orakRow> {
+        public partial class diakDataTable : global::System.Data.TypedTableBase<diakRow> {
             
-            private global::System.Data.DataColumn columnosztaly;
+            private global::System.Data.DataColumn columndiak_id;
             
-            private global::System.Data.DataColumn columnora;
+            private global::System.Data.DataColumn columndiak_nev;
+            
+            private global::System.Data.DataColumn columnosztaly_id;
+            
+            private global::System.Data.DataColumn columnkep;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public n_orakDataTable() {
-                this.TableName = "n_orak";
+            public diakDataTable() {
+                this.TableName = "diak";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -434,7 +438,7 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal n_orakDataTable(global::System.Data.DataTable table) {
+            internal diakDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -451,24 +455,40 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected n_orakDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected diakDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn osztalyColumn {
+            public global::System.Data.DataColumn diak_idColumn {
                 get {
-                    return this.columnosztaly;
+                    return this.columndiak_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn oraColumn {
+            public global::System.Data.DataColumn diak_nevColumn {
                 get {
-                    return this.columnora;
+                    return this.columndiak_nev;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn osztaly_idColumn {
+                get {
+                    return this.columnosztaly_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn kepColumn {
+                get {
+                    return this.columnkep;
                 }
             }
             
@@ -483,46 +503,55 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public n_orakRow this[int index] {
+            public diakRow this[int index] {
                 get {
-                    return ((n_orakRow)(this.Rows[index]));
+                    return ((diakRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event n_orakRowChangeEventHandler n_orakRowChanging;
+            public event diakRowChangeEventHandler diakRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event n_orakRowChangeEventHandler n_orakRowChanged;
+            public event diakRowChangeEventHandler diakRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event n_orakRowChangeEventHandler n_orakRowDeleting;
+            public event diakRowChangeEventHandler diakRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event n_orakRowChangeEventHandler n_orakRowDeleted;
+            public event diakRowChangeEventHandler diakRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Addn_orakRow(n_orakRow row) {
+            public void AdddiakRow(diakRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public n_orakRow Addn_orakRow(string osztaly, string ora) {
-                n_orakRow rown_orakRow = ((n_orakRow)(this.NewRow()));
+            public diakRow AdddiakRow(int diak_id, string diak_nev, int osztaly_id, byte[] kep) {
+                diakRow rowdiakRow = ((diakRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        osztaly,
-                        ora};
-                rown_orakRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rown_orakRow);
-                return rown_orakRow;
+                        diak_id,
+                        diak_nev,
+                        osztaly_id,
+                        kep};
+                rowdiakRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdiakRow);
+                return rowdiakRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public diakRow FindBydiak_id(int diak_id) {
+                return ((diakRow)(this.Rows.Find(new object[] {
+                            diak_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                n_orakDataTable cln = ((n_orakDataTable)(base.Clone()));
+                diakDataTable cln = ((diakDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -530,53 +559,60 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new n_orakDataTable();
+                return new diakDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnosztaly = base.Columns["osztaly"];
-                this.columnora = base.Columns["ora"];
+                this.columndiak_id = base.Columns["diak_id"];
+                this.columndiak_nev = base.Columns["diak_nev"];
+                this.columnosztaly_id = base.Columns["osztaly_id"];
+                this.columnkep = base.Columns["kep"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnosztaly = new global::System.Data.DataColumn("osztaly", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnosztaly);
-                this.columnora = new global::System.Data.DataColumn("ora", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnora);
-                this.columnosztaly.AllowDBNull = false;
-                this.columnosztaly.MaxLength = 100;
-                this.columnora.AllowDBNull = false;
-                this.columnora.MaxLength = 100;
+                this.columndiak_id = new global::System.Data.DataColumn("diak_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiak_id);
+                this.columndiak_nev = new global::System.Data.DataColumn("diak_nev", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiak_nev);
+                this.columnosztaly_id = new global::System.Data.DataColumn("osztaly_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnosztaly_id);
+                this.columnkep = new global::System.Data.DataColumn("kep", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkep);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columndiak_id}, true));
+                this.columndiak_id.AllowDBNull = false;
+                this.columndiak_id.Unique = true;
+                this.columndiak_nev.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public n_orakRow Newn_orakRow() {
-                return ((n_orakRow)(this.NewRow()));
+            public diakRow NewdiakRow() {
+                return ((diakRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new n_orakRow(builder);
+                return new diakRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(n_orakRow);
+                return typeof(diakRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.n_orakRowChanged != null)) {
-                    this.n_orakRowChanged(this, new n_orakRowChangeEvent(((n_orakRow)(e.Row)), e.Action));
+                if ((this.diakRowChanged != null)) {
+                    this.diakRowChanged(this, new diakRowChangeEvent(((diakRow)(e.Row)), e.Action));
                 }
             }
             
@@ -584,8 +620,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.n_orakRowChanging != null)) {
-                    this.n_orakRowChanging(this, new n_orakRowChangeEvent(((n_orakRow)(e.Row)), e.Action));
+                if ((this.diakRowChanging != null)) {
+                    this.diakRowChanging(this, new diakRowChangeEvent(((diakRow)(e.Row)), e.Action));
                 }
             }
             
@@ -593,8 +629,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.n_orakRowDeleted != null)) {
-                    this.n_orakRowDeleted(this, new n_orakRowChangeEvent(((n_orakRow)(e.Row)), e.Action));
+                if ((this.diakRowDeleted != null)) {
+                    this.diakRowDeleted(this, new diakRowChangeEvent(((diakRow)(e.Row)), e.Action));
                 }
             }
             
@@ -602,14 +638,14 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.n_orakRowDeleting != null)) {
-                    this.n_orakRowDeleting(this, new n_orakRowChangeEvent(((n_orakRow)(e.Row)), e.Action));
+                if ((this.diakRowDeleting != null)) {
+                    this.diakRowDeleting(this, new diakRowChangeEvent(((diakRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Removen_orakRow(n_orakRow row) {
+            public void RemovediakRow(diakRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -618,7 +654,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                teachhelperDataSet4 ds = new teachhelperDataSet4();
+                AdatTablak ds = new AdatTablak();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -636,7 +672,7 @@ namespace WindowsFormsApp1 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "n_orakDataTable";
+                attribute2.FixedValue = "diakDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -682,26 +718,22 @@ namespace WindowsFormsApp1 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class osztalyokDataTable : global::System.Data.TypedTableBase<osztalyokRow> {
+        public partial class jelenletDataTable : global::System.Data.TypedTableBase<jelenletRow> {
             
-            private global::System.Data.DataColumn columntanar;
+            private global::System.Data.DataColumn columnjelenlet_id;
             
-            private global::System.Data.DataColumn columnÓra_szám;
+            private global::System.Data.DataColumn columndiak_id;
             
-            private global::System.Data.DataColumn columnHétfő;
+            private global::System.Data.DataColumn columntantargy_id;
             
-            private global::System.Data.DataColumn columnKedd;
+            private global::System.Data.DataColumn columndatum;
             
-            private global::System.Data.DataColumn columnSzerda;
-            
-            private global::System.Data.DataColumn columnCsütörtök;
-            
-            private global::System.Data.DataColumn columnPéntek;
+            private global::System.Data.DataColumn columnjelenlet;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public osztalyokDataTable() {
-                this.TableName = "osztalyok";
+            public jelenletDataTable() {
+                this.TableName = "jelenlet";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -709,7 +741,7 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal osztalyokDataTable(global::System.Data.DataTable table) {
+            internal jelenletDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -726,64 +758,48 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected osztalyokDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected jelenletDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn tanarColumn {
+            public global::System.Data.DataColumn jelenlet_idColumn {
                 get {
-                    return this.columntanar;
+                    return this.columnjelenlet_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Óra_számColumn {
+            public global::System.Data.DataColumn diak_idColumn {
                 get {
-                    return this.columnÓra_szám;
+                    return this.columndiak_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HétfőColumn {
+            public global::System.Data.DataColumn tantargy_idColumn {
                 get {
-                    return this.columnHétfő;
+                    return this.columntantargy_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn KeddColumn {
+            public global::System.Data.DataColumn datumColumn {
                 get {
-                    return this.columnKedd;
+                    return this.columndatum;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SzerdaColumn {
+            public global::System.Data.DataColumn jelenletColumn {
                 get {
-                    return this.columnSzerda;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CsütörtökColumn {
-                get {
-                    return this.columnCsütörtök;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PéntekColumn {
-                get {
-                    return this.columnPéntek;
+                    return this.columnjelenlet;
                 }
             }
             
@@ -798,51 +814,56 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public osztalyokRow this[int index] {
+            public jelenletRow this[int index] {
                 get {
-                    return ((osztalyokRow)(this.Rows[index]));
+                    return ((jelenletRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event osztalyokRowChangeEventHandler osztalyokRowChanging;
+            public event jelenletRowChangeEventHandler jelenletRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event osztalyokRowChangeEventHandler osztalyokRowChanged;
+            public event jelenletRowChangeEventHandler jelenletRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event osztalyokRowChangeEventHandler osztalyokRowDeleting;
+            public event jelenletRowChangeEventHandler jelenletRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event osztalyokRowChangeEventHandler osztalyokRowDeleted;
+            public event jelenletRowChangeEventHandler jelenletRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddosztalyokRow(osztalyokRow row) {
+            public void AddjelenletRow(jelenletRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public osztalyokRow AddosztalyokRow(string tanar, string Óra_szám, string Hétfő, string Kedd, string Szerda, string Csütörtök, string Péntek) {
-                osztalyokRow rowosztalyokRow = ((osztalyokRow)(this.NewRow()));
+            public jelenletRow AddjelenletRow(int jelenlet_id, int diak_id, int tantargy_id, System.DateTime datum, short jelenlet) {
+                jelenletRow rowjelenletRow = ((jelenletRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        tanar,
-                        Óra_szám,
-                        Hétfő,
-                        Kedd,
-                        Szerda,
-                        Csütörtök,
-                        Péntek};
-                rowosztalyokRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowosztalyokRow);
-                return rowosztalyokRow;
+                        jelenlet_id,
+                        diak_id,
+                        tantargy_id,
+                        datum,
+                        jelenlet};
+                rowjelenletRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowjelenletRow);
+                return rowjelenletRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public jelenletRow FindByjelenlet_id(int jelenlet_id) {
+                return ((jelenletRow)(this.Rows.Find(new object[] {
+                            jelenlet_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                osztalyokDataTable cln = ((osztalyokDataTable)(base.Clone()));
+                jelenletDataTable cln = ((jelenletDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -850,78 +871,62 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new osztalyokDataTable();
+                return new jelenletDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columntanar = base.Columns["tanar"];
-                this.columnÓra_szám = base.Columns["Óra szám"];
-                this.columnHétfő = base.Columns["Hétfő"];
-                this.columnKedd = base.Columns["Kedd"];
-                this.columnSzerda = base.Columns["Szerda"];
-                this.columnCsütörtök = base.Columns["Csütörtök"];
-                this.columnPéntek = base.Columns["Péntek"];
+                this.columnjelenlet_id = base.Columns["jelenlet_id"];
+                this.columndiak_id = base.Columns["diak_id"];
+                this.columntantargy_id = base.Columns["tantargy_id"];
+                this.columndatum = base.Columns["datum"];
+                this.columnjelenlet = base.Columns["jelenlet"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columntanar = new global::System.Data.DataColumn("tanar", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntanar);
-                this.columnÓra_szám = new global::System.Data.DataColumn("Óra szám", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnÓra_szám);
-                this.columnHétfő = new global::System.Data.DataColumn("Hétfő", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHétfő);
-                this.columnKedd = new global::System.Data.DataColumn("Kedd", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKedd);
-                this.columnSzerda = new global::System.Data.DataColumn("Szerda", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSzerda);
-                this.columnCsütörtök = new global::System.Data.DataColumn("Csütörtök", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCsütörtök);
-                this.columnPéntek = new global::System.Data.DataColumn("Péntek", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPéntek);
-                this.columntanar.AllowDBNull = false;
-                this.columntanar.MaxLength = 510;
-                this.columnÓra_szám.AllowDBNull = false;
-                this.columnÓra_szám.MaxLength = 510;
-                this.columnHétfő.AllowDBNull = false;
-                this.columnHétfő.MaxLength = 510;
-                this.columnKedd.AllowDBNull = false;
-                this.columnKedd.MaxLength = 510;
-                this.columnSzerda.AllowDBNull = false;
-                this.columnSzerda.MaxLength = 510;
-                this.columnCsütörtök.AllowDBNull = false;
-                this.columnCsütörtök.MaxLength = 510;
-                this.columnPéntek.AllowDBNull = false;
-                this.columnPéntek.MaxLength = 510;
+                this.columnjelenlet_id = new global::System.Data.DataColumn("jelenlet_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnjelenlet_id);
+                this.columndiak_id = new global::System.Data.DataColumn("diak_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiak_id);
+                this.columntantargy_id = new global::System.Data.DataColumn("tantargy_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntantargy_id);
+                this.columndatum = new global::System.Data.DataColumn("datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndatum);
+                this.columnjelenlet = new global::System.Data.DataColumn("jelenlet", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnjelenlet);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnjelenlet_id}, true));
+                this.columnjelenlet_id.AllowDBNull = false;
+                this.columnjelenlet_id.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public osztalyokRow NewosztalyokRow() {
-                return ((osztalyokRow)(this.NewRow()));
+            public jelenletRow NewjelenletRow() {
+                return ((jelenletRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new osztalyokRow(builder);
+                return new jelenletRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(osztalyokRow);
+                return typeof(jelenletRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.osztalyokRowChanged != null)) {
-                    this.osztalyokRowChanged(this, new osztalyokRowChangeEvent(((osztalyokRow)(e.Row)), e.Action));
+                if ((this.jelenletRowChanged != null)) {
+                    this.jelenletRowChanged(this, new jelenletRowChangeEvent(((jelenletRow)(e.Row)), e.Action));
                 }
             }
             
@@ -929,8 +934,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.osztalyokRowChanging != null)) {
-                    this.osztalyokRowChanging(this, new osztalyokRowChangeEvent(((osztalyokRow)(e.Row)), e.Action));
+                if ((this.jelenletRowChanging != null)) {
+                    this.jelenletRowChanging(this, new jelenletRowChangeEvent(((jelenletRow)(e.Row)), e.Action));
                 }
             }
             
@@ -938,8 +943,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.osztalyokRowDeleted != null)) {
-                    this.osztalyokRowDeleted(this, new osztalyokRowChangeEvent(((osztalyokRow)(e.Row)), e.Action));
+                if ((this.jelenletRowDeleted != null)) {
+                    this.jelenletRowDeleted(this, new jelenletRowChangeEvent(((jelenletRow)(e.Row)), e.Action));
                 }
             }
             
@@ -947,14 +952,14 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.osztalyokRowDeleting != null)) {
-                    this.osztalyokRowDeleting(this, new osztalyokRowChangeEvent(((osztalyokRow)(e.Row)), e.Action));
+                if ((this.jelenletRowDeleting != null)) {
+                    this.jelenletRowDeleting(this, new jelenletRowChangeEvent(((jelenletRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveosztalyokRow(osztalyokRow row) {
+            public void RemovejelenletRow(jelenletRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -963,7 +968,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                teachhelperDataSet4 ds = new teachhelperDataSet4();
+                AdatTablak ds = new AdatTablak();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -981,7 +986,280 @@ namespace WindowsFormsApp1 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "osztalyokDataTable";
+                attribute2.FixedValue = "jelenletDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class osztalyDataTable : global::System.Data.TypedTableBase<osztalyRow> {
+            
+            private global::System.Data.DataColumn columnosztaly_id;
+            
+            private global::System.Data.DataColumn columnosztaly_nev;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public osztalyDataTable() {
+                this.TableName = "osztaly";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal osztalyDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected osztalyDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn osztaly_idColumn {
+                get {
+                    return this.columnosztaly_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn osztaly_nevColumn {
+                get {
+                    return this.columnosztaly_nev;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public osztalyRow this[int index] {
+                get {
+                    return ((osztalyRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event osztalyRowChangeEventHandler osztalyRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event osztalyRowChangeEventHandler osztalyRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event osztalyRowChangeEventHandler osztalyRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event osztalyRowChangeEventHandler osztalyRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddosztalyRow(osztalyRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public osztalyRow AddosztalyRow(int osztaly_id, string osztaly_nev) {
+                osztalyRow rowosztalyRow = ((osztalyRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        osztaly_id,
+                        osztaly_nev};
+                rowosztalyRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowosztalyRow);
+                return rowosztalyRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public osztalyRow FindByosztaly_id(int osztaly_id) {
+                return ((osztalyRow)(this.Rows.Find(new object[] {
+                            osztaly_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                osztalyDataTable cln = ((osztalyDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new osztalyDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnosztaly_id = base.Columns["osztaly_id"];
+                this.columnosztaly_nev = base.Columns["osztaly_nev"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnosztaly_id = new global::System.Data.DataColumn("osztaly_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnosztaly_id);
+                this.columnosztaly_nev = new global::System.Data.DataColumn("osztaly_nev", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnosztaly_nev);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnosztaly_id}, true));
+                this.columnosztaly_id.AllowDBNull = false;
+                this.columnosztaly_id.Unique = true;
+                this.columnosztaly_nev.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public osztalyRow NewosztalyRow() {
+                return ((osztalyRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new osztalyRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(osztalyRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.osztalyRowChanged != null)) {
+                    this.osztalyRowChanged(this, new osztalyRowChangeEvent(((osztalyRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.osztalyRowChanging != null)) {
+                    this.osztalyRowChanging(this, new osztalyRowChangeEvent(((osztalyRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.osztalyRowDeleted != null)) {
+                    this.osztalyRowDeleted(this, new osztalyRowChangeEvent(((osztalyRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.osztalyRowDeleting != null)) {
+                    this.osztalyRowDeleting(this, new osztalyRowChangeEvent(((osztalyRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveosztalyRow(osztalyRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AdatTablak ds = new AdatTablak();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "osztalyDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1029,17 +1307,15 @@ namespace WindowsFormsApp1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class tanarDataTable : global::System.Data.TypedTableBase<tanarRow> {
             
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columntanar_id;
             
-            private global::System.Data.DataColumn columnteljesNev;
+            private global::System.Data.DataColumn columntanar_nev;
             
-            private global::System.Data.DataColumn columnfelhasznaloNev;
+            private global::System.Data.DataColumn columntanar_felhasznalonev;
             
-            private global::System.Data.DataColumn columnemailCim;
+            private global::System.Data.DataColumn columntanar_email_cim;
             
-            private global::System.Data.DataColumn columnjelszo;
-            
-            private global::System.Data.DataColumn columnadmin;
+            private global::System.Data.DataColumn columntanar_jelszo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1076,49 +1352,41 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn tanar_idColumn {
                 get {
-                    return this.columnid;
+                    return this.columntanar_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn teljesNevColumn {
+            public global::System.Data.DataColumn tanar_nevColumn {
                 get {
-                    return this.columnteljesNev;
+                    return this.columntanar_nev;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn felhasznaloNevColumn {
+            public global::System.Data.DataColumn tanar_felhasznalonevColumn {
                 get {
-                    return this.columnfelhasznaloNev;
+                    return this.columntanar_felhasznalonev;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn emailCimColumn {
+            public global::System.Data.DataColumn tanar_email_cimColumn {
                 get {
-                    return this.columnemailCim;
+                    return this.columntanar_email_cim;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn jelszoColumn {
+            public global::System.Data.DataColumn tanar_jelszoColumn {
                 get {
-                    return this.columnjelszo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn adminColumn {
-                get {
-                    return this.columnadmin;
+                    return this.columntanar_jelszo;
                 }
             }
             
@@ -1159,18 +1427,24 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tanarRow AddtanarRow(string teljesNev, string felhasznaloNev, string emailCim, string jelszo, string admin) {
+            public tanarRow AddtanarRow(int tanar_id, string tanar_nev, string tanar_felhasznalonev, string tanar_email_cim, string tanar_jelszo) {
                 tanarRow rowtanarRow = ((tanarRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        teljesNev,
-                        felhasznaloNev,
-                        emailCim,
-                        jelszo,
-                        admin};
+                        tanar_id,
+                        tanar_nev,
+                        tanar_felhasznalonev,
+                        tanar_email_cim,
+                        tanar_jelszo};
                 rowtanarRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtanarRow);
                 return rowtanarRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tanarRow FindBytanar_id(int tanar_id) {
+                return ((tanarRow)(this.Rows.Find(new object[] {
+                            tanar_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1190,41 +1464,34 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnteljesNev = base.Columns["teljesNev"];
-                this.columnfelhasznaloNev = base.Columns["felhasznaloNev"];
-                this.columnemailCim = base.Columns["emailCim"];
-                this.columnjelszo = base.Columns["jelszo"];
-                this.columnadmin = base.Columns["admin"];
+                this.columntanar_id = base.Columns["tanar_id"];
+                this.columntanar_nev = base.Columns["tanar_nev"];
+                this.columntanar_felhasznalonev = base.Columns["tanar_felhasznalonev"];
+                this.columntanar_email_cim = base.Columns["tanar_email_cim"];
+                this.columntanar_jelszo = base.Columns["tanar_jelszo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnteljesNev = new global::System.Data.DataColumn("teljesNev", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnteljesNev);
-                this.columnfelhasznaloNev = new global::System.Data.DataColumn("felhasznaloNev", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfelhasznaloNev);
-                this.columnemailCim = new global::System.Data.DataColumn("emailCim", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnemailCim);
-                this.columnjelszo = new global::System.Data.DataColumn("jelszo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnjelszo);
-                this.columnadmin = new global::System.Data.DataColumn("admin", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnadmin);
+                this.columntanar_id = new global::System.Data.DataColumn("tanar_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntanar_id);
+                this.columntanar_nev = new global::System.Data.DataColumn("tanar_nev", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntanar_nev);
+                this.columntanar_felhasznalonev = new global::System.Data.DataColumn("tanar_felhasznalonev", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntanar_felhasznalonev);
+                this.columntanar_email_cim = new global::System.Data.DataColumn("tanar_email_cim", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntanar_email_cim);
+                this.columntanar_jelszo = new global::System.Data.DataColumn("tanar_jelszo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntanar_jelszo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, false));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.Unique = true;
-                this.columnteljesNev.MaxLength = 100;
-                this.columnfelhasznaloNev.MaxLength = 100;
-                this.columnemailCim.MaxLength = 120;
-                this.columnjelszo.MaxLength = 30;
-                this.columnadmin.AllowDBNull = false;
-                this.columnadmin.MaxLength = 40;
+                                this.columntanar_id}, true));
+                this.columntanar_id.AllowDBNull = false;
+                this.columntanar_id.Unique = true;
+                this.columntanar_nev.MaxLength = 100;
+                this.columntanar_felhasznalonev.MaxLength = 100;
+                this.columntanar_email_cim.MaxLength = 100;
+                this.columntanar_jelszo.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1292,7 +1559,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                teachhelperDataSet4 ds = new teachhelperDataSet4();
+                AdatTablak ds = new AdatTablak();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1356,18 +1623,18 @@ namespace WindowsFormsApp1 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tanulokDataTable : global::System.Data.TypedTableBase<tanulokRow> {
+        public partial class tantargyDataTable : global::System.Data.TypedTableBase<tantargyRow> {
             
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columntantargy_id;
             
-            private global::System.Data.DataColumn columnTeljesNev;
+            private global::System.Data.DataColumn columntantargy_nev;
             
-            private global::System.Data.DataColumn columnjelenlet;
+            private global::System.Data.DataColumn columntanar_id;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tanulokDataTable() {
-                this.TableName = "tanulok";
+            public tantargyDataTable() {
+                this.TableName = "tantargy";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1375,7 +1642,7 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tanulokDataTable(global::System.Data.DataTable table) {
+            internal tantargyDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1392,32 +1659,32 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected tanulokDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tantargyDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn tantargy_idColumn {
                 get {
-                    return this.columnid;
+                    return this.columntantargy_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TeljesNevColumn {
+            public global::System.Data.DataColumn tantargy_nevColumn {
                 get {
-                    return this.columnTeljesNev;
+                    return this.columntantargy_nev;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn jelenletColumn {
+            public global::System.Data.DataColumn tanar_idColumn {
                 get {
-                    return this.columnjelenlet;
+                    return this.columntanar_id;
                 }
             }
             
@@ -1432,47 +1699,54 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tanulokRow this[int index] {
+            public tantargyRow this[int index] {
                 get {
-                    return ((tanulokRow)(this.Rows[index]));
+                    return ((tantargyRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tanulokRowChangeEventHandler tanulokRowChanging;
+            public event tantargyRowChangeEventHandler tantargyRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tanulokRowChangeEventHandler tanulokRowChanged;
+            public event tantargyRowChangeEventHandler tantargyRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tanulokRowChangeEventHandler tanulokRowDeleting;
+            public event tantargyRowChangeEventHandler tantargyRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event tanulokRowChangeEventHandler tanulokRowDeleted;
+            public event tantargyRowChangeEventHandler tantargyRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddtanulokRow(tanulokRow row) {
+            public void AddtantargyRow(tantargyRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tanulokRow AddtanulokRow(string TeljesNev, short jelenlet) {
-                tanulokRow rowtanulokRow = ((tanulokRow)(this.NewRow()));
+            public tantargyRow AddtantargyRow(int tantargy_id, string tantargy_nev, int tanar_id) {
+                tantargyRow rowtantargyRow = ((tantargyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        TeljesNev,
-                        jelenlet};
-                rowtanulokRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtanulokRow);
-                return rowtanulokRow;
+                        tantargy_id,
+                        tantargy_nev,
+                        tanar_id};
+                rowtantargyRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtantargyRow);
+                return rowtantargyRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public tantargyRow FindBytantargy_id(int tantargy_id) {
+                return ((tantargyRow)(this.Rows.Find(new object[] {
+                            tantargy_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tanulokDataTable cln = ((tanulokDataTable)(base.Clone()));
+                tantargyDataTable cln = ((tantargyDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1480,59 +1754,57 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tanulokDataTable();
+                return new tantargyDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnTeljesNev = base.Columns["TeljesNev"];
-                this.columnjelenlet = base.Columns["jelenlet"];
+                this.columntantargy_id = base.Columns["tantargy_id"];
+                this.columntantargy_nev = base.Columns["tantargy_nev"];
+                this.columntanar_id = base.Columns["tanar_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnTeljesNev = new global::System.Data.DataColumn("TeljesNev", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTeljesNev);
-                this.columnjelenlet = new global::System.Data.DataColumn("jelenlet", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnjelenlet);
+                this.columntantargy_id = new global::System.Data.DataColumn("tantargy_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntantargy_id);
+                this.columntantargy_nev = new global::System.Data.DataColumn("tantargy_nev", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntantargy_nev);
+                this.columntanar_id = new global::System.Data.DataColumn("tanar_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntanar_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, false));
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.Unique = true;
-                this.columnTeljesNev.MaxLength = 100;
+                                this.columntantargy_id}, true));
+                this.columntantargy_id.AllowDBNull = false;
+                this.columntantargy_id.Unique = true;
+                this.columntantargy_nev.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tanulokRow NewtanulokRow() {
-                return ((tanulokRow)(this.NewRow()));
+            public tantargyRow NewtantargyRow() {
+                return ((tantargyRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tanulokRow(builder);
+                return new tantargyRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tanulokRow);
+                return typeof(tantargyRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tanulokRowChanged != null)) {
-                    this.tanulokRowChanged(this, new tanulokRowChangeEvent(((tanulokRow)(e.Row)), e.Action));
+                if ((this.tantargyRowChanged != null)) {
+                    this.tantargyRowChanged(this, new tantargyRowChangeEvent(((tantargyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1540,8 +1812,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tanulokRowChanging != null)) {
-                    this.tanulokRowChanging(this, new tanulokRowChangeEvent(((tanulokRow)(e.Row)), e.Action));
+                if ((this.tantargyRowChanging != null)) {
+                    this.tantargyRowChanging(this, new tantargyRowChangeEvent(((tantargyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1549,8 +1821,8 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tanulokRowDeleted != null)) {
-                    this.tanulokRowDeleted(this, new tanulokRowChangeEvent(((tanulokRow)(e.Row)), e.Action));
+                if ((this.tantargyRowDeleted != null)) {
+                    this.tantargyRowDeleted(this, new tantargyRowChangeEvent(((tantargyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1558,14 +1830,14 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tanulokRowDeleting != null)) {
-                    this.tanulokRowDeleting(this, new tanulokRowChangeEvent(((tanulokRow)(e.Row)), e.Action));
+                if ((this.tantargyRowDeleting != null)) {
+                    this.tantargyRowDeleting(this, new tantargyRowChangeEvent(((tantargyRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemovetanulokRow(tanulokRow row) {
+            public void RemovetantargyRow(tantargyRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1574,7 +1846,7 @@ namespace WindowsFormsApp1 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                teachhelperDataSet4 ds = new teachhelperDataSet4();
+                AdatTablak ds = new AdatTablak();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1592,352 +1864,7 @@ namespace WindowsFormsApp1 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tanulokDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class orarendDataTable : global::System.Data.TypedTableBase<orarendRow> {
-            
-            private global::System.Data.DataColumn columntanar;
-            
-            private global::System.Data.DataColumn columnÓra_szám;
-            
-            private global::System.Data.DataColumn columnHétfő;
-            
-            private global::System.Data.DataColumn columnKedd;
-            
-            private global::System.Data.DataColumn columnSzerda;
-            
-            private global::System.Data.DataColumn columnCsütörtök;
-            
-            private global::System.Data.DataColumn columnPéntek;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public orarendDataTable() {
-                this.TableName = "orarend";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal orarendDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected orarendDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn tanarColumn {
-                get {
-                    return this.columntanar;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Óra_számColumn {
-                get {
-                    return this.columnÓra_szám;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn HétfőColumn {
-                get {
-                    return this.columnHétfő;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn KeddColumn {
-                get {
-                    return this.columnKedd;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SzerdaColumn {
-                get {
-                    return this.columnSzerda;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CsütörtökColumn {
-                get {
-                    return this.columnCsütörtök;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PéntekColumn {
-                get {
-                    return this.columnPéntek;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public orarendRow this[int index] {
-                get {
-                    return ((orarendRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event orarendRowChangeEventHandler orarendRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event orarendRowChangeEventHandler orarendRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event orarendRowChangeEventHandler orarendRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event orarendRowChangeEventHandler orarendRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddorarendRow(orarendRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public orarendRow AddorarendRow(string tanar, string Óra_szám, string Hétfő, string Kedd, string Szerda, string Csütörtök, string Péntek) {
-                orarendRow roworarendRow = ((orarendRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        tanar,
-                        Óra_szám,
-                        Hétfő,
-                        Kedd,
-                        Szerda,
-                        Csütörtök,
-                        Péntek};
-                roworarendRow.ItemArray = columnValuesArray;
-                this.Rows.Add(roworarendRow);
-                return roworarendRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                orarendDataTable cln = ((orarendDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new orarendDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columntanar = base.Columns["tanar"];
-                this.columnÓra_szám = base.Columns["Óra szám"];
-                this.columnHétfő = base.Columns["Hétfő"];
-                this.columnKedd = base.Columns["Kedd"];
-                this.columnSzerda = base.Columns["Szerda"];
-                this.columnCsütörtök = base.Columns["Csütörtök"];
-                this.columnPéntek = base.Columns["Péntek"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columntanar = new global::System.Data.DataColumn("tanar", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntanar);
-                this.columnÓra_szám = new global::System.Data.DataColumn("Óra szám", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnÓra_szám);
-                this.columnHétfő = new global::System.Data.DataColumn("Hétfő", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHétfő);
-                this.columnKedd = new global::System.Data.DataColumn("Kedd", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKedd);
-                this.columnSzerda = new global::System.Data.DataColumn("Szerda", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSzerda);
-                this.columnCsütörtök = new global::System.Data.DataColumn("Csütörtök", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCsütörtök);
-                this.columnPéntek = new global::System.Data.DataColumn("Péntek", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPéntek);
-                this.columntanar.AllowDBNull = false;
-                this.columntanar.MaxLength = 510;
-                this.columnÓra_szám.AllowDBNull = false;
-                this.columnÓra_szám.MaxLength = 40;
-                this.columnHétfő.AllowDBNull = false;
-                this.columnHétfő.MaxLength = 510;
-                this.columnKedd.AllowDBNull = false;
-                this.columnKedd.MaxLength = 510;
-                this.columnSzerda.AllowDBNull = false;
-                this.columnSzerda.MaxLength = 510;
-                this.columnCsütörtök.AllowDBNull = false;
-                this.columnCsütörtök.MaxLength = 510;
-                this.columnPéntek.AllowDBNull = false;
-                this.columnPéntek.MaxLength = 510;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public orarendRow NeworarendRow() {
-                return ((orarendRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new orarendRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(orarendRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.orarendRowChanged != null)) {
-                    this.orarendRowChanged(this, new orarendRowChangeEvent(((orarendRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.orarendRowChanging != null)) {
-                    this.orarendRowChanging(this, new orarendRowChangeEvent(((orarendRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.orarendRowDeleted != null)) {
-                    this.orarendRowDeleted(this, new orarendRowChangeEvent(((orarendRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.orarendRowDeleting != null)) {
-                    this.orarendRowDeleting(this, new orarendRowChangeEvent(((orarendRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveorarendRow(orarendRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                teachhelperDataSet4 ds = new teachhelperDataSet4();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "orarendDataTable";
+                attribute2.FixedValue = "tantargyDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1981,129 +1908,302 @@ namespace WindowsFormsApp1 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class n_orakRow : global::System.Data.DataRow {
+        public partial class diakRow : global::System.Data.DataRow {
             
-            private n_orakDataTable tablen_orak;
+            private diakDataTable tablediak;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal n_orakRow(global::System.Data.DataRowBuilder rb) : 
+            internal diakRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablen_orak = ((n_orakDataTable)(this.Table));
+                this.tablediak = ((diakDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string osztaly {
+            public int diak_id {
                 get {
-                    return ((string)(this[this.tablen_orak.osztalyColumn]));
+                    return ((int)(this[this.tablediak.diak_idColumn]));
                 }
                 set {
-                    this[this.tablen_orak.osztalyColumn] = value;
+                    this[this.tablediak.diak_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ora {
+            public string diak_nev {
                 get {
-                    return ((string)(this[this.tablen_orak.oraColumn]));
+                    try {
+                        return ((string)(this[this.tablediak.diak_nevColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'diak_nev\' in table \'diak\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablen_orak.oraColumn] = value;
+                    this[this.tablediak.diak_nevColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int osztaly_id {
+                get {
+                    try {
+                        return ((int)(this[this.tablediak.osztaly_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'osztaly_id\' in table \'diak\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablediak.osztaly_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public byte[] kep {
+                get {
+                    try {
+                        return ((byte[])(this[this.tablediak.kepColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'kep\' in table \'diak\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablediak.kepColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isdiak_nevNull() {
+                return this.IsNull(this.tablediak.diak_nevColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setdiak_nevNull() {
+                this[this.tablediak.diak_nevColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isosztaly_idNull() {
+                return this.IsNull(this.tablediak.osztaly_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setosztaly_idNull() {
+                this[this.tablediak.osztaly_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IskepNull() {
+                return this.IsNull(this.tablediak.kepColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetkepNull() {
+                this[this.tablediak.kepColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class osztalyokRow : global::System.Data.DataRow {
+        public partial class jelenletRow : global::System.Data.DataRow {
             
-            private osztalyokDataTable tableosztalyok;
+            private jelenletDataTable tablejelenlet;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal osztalyokRow(global::System.Data.DataRowBuilder rb) : 
+            internal jelenletRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableosztalyok = ((osztalyokDataTable)(this.Table));
+                this.tablejelenlet = ((jelenletDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string tanar {
+            public int jelenlet_id {
                 get {
-                    return ((string)(this[this.tableosztalyok.tanarColumn]));
+                    return ((int)(this[this.tablejelenlet.jelenlet_idColumn]));
                 }
                 set {
-                    this[this.tableosztalyok.tanarColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Óra_szám {
-                get {
-                    return ((string)(this[this.tableosztalyok.Óra_számColumn]));
-                }
-                set {
-                    this[this.tableosztalyok.Óra_számColumn] = value;
+                    this[this.tablejelenlet.jelenlet_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Hétfő {
+            public int diak_id {
                 get {
-                    return ((string)(this[this.tableosztalyok.HétfőColumn]));
+                    try {
+                        return ((int)(this[this.tablejelenlet.diak_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'diak_id\' in table \'jelenlet\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableosztalyok.HétfőColumn] = value;
+                    this[this.tablejelenlet.diak_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Kedd {
+            public int tantargy_id {
                 get {
-                    return ((string)(this[this.tableosztalyok.KeddColumn]));
+                    try {
+                        return ((int)(this[this.tablejelenlet.tantargy_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tantargy_id\' in table \'jelenlet\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableosztalyok.KeddColumn] = value;
+                    this[this.tablejelenlet.tantargy_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Szerda {
+            public System.DateTime datum {
                 get {
-                    return ((string)(this[this.tableosztalyok.SzerdaColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablejelenlet.datumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'datum\' in table \'jelenlet\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableosztalyok.SzerdaColumn] = value;
+                    this[this.tablejelenlet.datumColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Csütörtök {
+            public short jelenlet {
                 get {
-                    return ((string)(this[this.tableosztalyok.CsütörtökColumn]));
+                    try {
+                        return ((short)(this[this.tablejelenlet.jelenletColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'jelenlet\' in table \'jelenlet\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableosztalyok.CsütörtökColumn] = value;
+                    this[this.tablejelenlet.jelenletColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Péntek {
+            public bool Isdiak_idNull() {
+                return this.IsNull(this.tablejelenlet.diak_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setdiak_idNull() {
+                this[this.tablejelenlet.diak_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istantargy_idNull() {
+                return this.IsNull(this.tablejelenlet.tantargy_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settantargy_idNull() {
+                this[this.tablejelenlet.tantargy_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsdatumNull() {
+                return this.IsNull(this.tablejelenlet.datumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetdatumNull() {
+                this[this.tablejelenlet.datumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsjelenletNull() {
+                return this.IsNull(this.tablejelenlet.jelenletColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetjelenletNull() {
+                this[this.tablejelenlet.jelenletColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class osztalyRow : global::System.Data.DataRow {
+            
+            private osztalyDataTable tableosztaly;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal osztalyRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableosztaly = ((osztalyDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int osztaly_id {
                 get {
-                    return ((string)(this[this.tableosztalyok.PéntekColumn]));
+                    return ((int)(this[this.tableosztaly.osztaly_idColumn]));
                 }
                 set {
-                    this[this.tableosztalyok.PéntekColumn] = value;
+                    this[this.tableosztaly.osztaly_idColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string osztaly_nev {
+                get {
+                    try {
+                        return ((string)(this[this.tableosztaly.osztaly_nevColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'osztaly_nev\' in table \'osztaly\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableosztaly.osztaly_nevColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isosztaly_nevNull() {
+                return this.IsNull(this.tableosztaly.osztaly_nevColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setosztaly_nevNull() {
+                this[this.tableosztaly.osztaly_nevColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2123,344 +2223,207 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id {
+            public int tanar_id {
+                get {
+                    return ((int)(this[this.tabletanar.tanar_idColumn]));
+                }
+                set {
+                    this[this.tabletanar.tanar_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string tanar_nev {
                 get {
                     try {
-                        return ((int)(this[this.tabletanar.idColumn]));
+                        return ((string)(this[this.tabletanar.tanar_nevColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'tanar\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'tanar_nev\' in table \'tanar\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletanar.idColumn] = value;
+                    this[this.tabletanar.tanar_nevColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string teljesNev {
+            public string tanar_felhasznalonev {
                 get {
                     try {
-                        return ((string)(this[this.tabletanar.teljesNevColumn]));
+                        return ((string)(this[this.tabletanar.tanar_felhasznalonevColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'teljesNev\' in table \'tanar\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'tanar_felhasznalonev\' in table \'tanar\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletanar.teljesNevColumn] = value;
+                    this[this.tabletanar.tanar_felhasznalonevColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string felhasznaloNev {
+            public string tanar_email_cim {
                 get {
                     try {
-                        return ((string)(this[this.tabletanar.felhasznaloNevColumn]));
+                        return ((string)(this[this.tabletanar.tanar_email_cimColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'felhasznaloNev\' in table \'tanar\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'tanar_email_cim\' in table \'tanar\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletanar.felhasznaloNevColumn] = value;
+                    this[this.tabletanar.tanar_email_cimColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string emailCim {
+            public string tanar_jelszo {
                 get {
                     try {
-                        return ((string)(this[this.tabletanar.emailCimColumn]));
+                        return ((string)(this[this.tabletanar.tanar_jelszoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'emailCim\' in table \'tanar\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'tanar_jelszo\' in table \'tanar\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletanar.emailCimColumn] = value;
+                    this[this.tabletanar.tanar_jelszoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string jelszo {
-                get {
-                    try {
-                        return ((string)(this[this.tabletanar.jelszoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'jelszo\' in table \'tanar\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletanar.jelszoColumn] = value;
-                }
+            public bool Istanar_nevNull() {
+                return this.IsNull(this.tabletanar.tanar_nevColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string admin {
-                get {
-                    return ((string)(this[this.tabletanar.adminColumn]));
-                }
-                set {
-                    this[this.tabletanar.adminColumn] = value;
-                }
+            public void Settanar_nevNull() {
+                this[this.tabletanar.tanar_nevColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tabletanar.idColumn);
+            public bool Istanar_felhasznalonevNull() {
+                return this.IsNull(this.tabletanar.tanar_felhasznalonevColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetidNull() {
-                this[this.tabletanar.idColumn] = global::System.Convert.DBNull;
+            public void Settanar_felhasznalonevNull() {
+                this[this.tabletanar.tanar_felhasznalonevColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsteljesNevNull() {
-                return this.IsNull(this.tabletanar.teljesNevColumn);
+            public bool Istanar_email_cimNull() {
+                return this.IsNull(this.tabletanar.tanar_email_cimColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetteljesNevNull() {
-                this[this.tabletanar.teljesNevColumn] = global::System.Convert.DBNull;
+            public void Settanar_email_cimNull() {
+                this[this.tabletanar.tanar_email_cimColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsfelhasznaloNevNull() {
-                return this.IsNull(this.tabletanar.felhasznaloNevColumn);
+            public bool Istanar_jelszoNull() {
+                return this.IsNull(this.tabletanar.tanar_jelszoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetfelhasznaloNevNull() {
-                this[this.tabletanar.felhasznaloNevColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsemailCimNull() {
-                return this.IsNull(this.tabletanar.emailCimColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetemailCimNull() {
-                this[this.tabletanar.emailCimColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsjelszoNull() {
-                return this.IsNull(this.tabletanar.jelszoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetjelszoNull() {
-                this[this.tabletanar.jelszoColumn] = global::System.Convert.DBNull;
+            public void Settanar_jelszoNull() {
+                this[this.tabletanar.tanar_jelszoColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tanulokRow : global::System.Data.DataRow {
+        public partial class tantargyRow : global::System.Data.DataRow {
             
-            private tanulokDataTable tabletanulok;
+            private tantargyDataTable tabletantargy;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal tanulokRow(global::System.Data.DataRowBuilder rb) : 
+            internal tantargyRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletanulok = ((tanulokDataTable)(this.Table));
+                this.tabletantargy = ((tantargyDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id {
+            public int tantargy_id {
+                get {
+                    return ((int)(this[this.tabletantargy.tantargy_idColumn]));
+                }
+                set {
+                    this[this.tabletantargy.tantargy_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string tantargy_nev {
                 get {
                     try {
-                        return ((int)(this[this.tabletanulok.idColumn]));
+                        return ((string)(this[this.tabletantargy.tantargy_nevColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id\' in table \'tanulok\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'tantargy_nev\' in table \'tantargy\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletanulok.idColumn] = value;
+                    this[this.tabletantargy.tantargy_nevColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string TeljesNev {
+            public int tanar_id {
                 get {
                     try {
-                        return ((string)(this[this.tabletanulok.TeljesNevColumn]));
+                        return ((int)(this[this.tabletantargy.tanar_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TeljesNev\' in table \'tanulok\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'tanar_id\' in table \'tantargy\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletanulok.TeljesNevColumn] = value;
+                    this[this.tabletantargy.tanar_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public short jelenlet {
-                get {
-                    try {
-                        return ((short)(this[this.tabletanulok.jelenletColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'jelenlet\' in table \'tanulok\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletanulok.jelenletColumn] = value;
-                }
+            public bool Istantargy_nevNull() {
+                return this.IsNull(this.tabletantargy.tantargy_nevColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tabletanulok.idColumn);
+            public void Settantargy_nevNull() {
+                this[this.tabletantargy.tantargy_nevColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetidNull() {
-                this[this.tabletanulok.idColumn] = global::System.Convert.DBNull;
+            public bool Istanar_idNull() {
+                return this.IsNull(this.tabletantargy.tanar_idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTeljesNevNull() {
-                return this.IsNull(this.tabletanulok.TeljesNevColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTeljesNevNull() {
-                this[this.tabletanulok.TeljesNevColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsjelenletNull() {
-                return this.IsNull(this.tabletanulok.jelenletColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetjelenletNull() {
-                this[this.tabletanulok.jelenletColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class orarendRow : global::System.Data.DataRow {
-            
-            private orarendDataTable tableorarend;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal orarendRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableorarend = ((orarendDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string tanar {
-                get {
-                    return ((string)(this[this.tableorarend.tanarColumn]));
-                }
-                set {
-                    this[this.tableorarend.tanarColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Óra_szám {
-                get {
-                    return ((string)(this[this.tableorarend.Óra_számColumn]));
-                }
-                set {
-                    this[this.tableorarend.Óra_számColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Hétfő {
-                get {
-                    return ((string)(this[this.tableorarend.HétfőColumn]));
-                }
-                set {
-                    this[this.tableorarend.HétfőColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Kedd {
-                get {
-                    return ((string)(this[this.tableorarend.KeddColumn]));
-                }
-                set {
-                    this[this.tableorarend.KeddColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Szerda {
-                get {
-                    return ((string)(this[this.tableorarend.SzerdaColumn]));
-                }
-                set {
-                    this[this.tableorarend.SzerdaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Csütörtök {
-                get {
-                    return ((string)(this[this.tableorarend.CsütörtökColumn]));
-                }
-                set {
-                    this[this.tableorarend.CsütörtökColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Péntek {
-                get {
-                    return ((string)(this[this.tableorarend.PéntekColumn]));
-                }
-                set {
-                    this[this.tableorarend.PéntekColumn] = value;
-                }
+            public void Settanar_idNull() {
+                this[this.tabletantargy.tanar_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2468,22 +2431,22 @@ namespace WindowsFormsApp1 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class n_orakRowChangeEvent : global::System.EventArgs {
+        public class diakRowChangeEvent : global::System.EventArgs {
             
-            private n_orakRow eventRow;
+            private diakRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public n_orakRowChangeEvent(n_orakRow row, global::System.Data.DataRowAction action) {
+            public diakRowChangeEvent(diakRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public n_orakRow Row {
+            public diakRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2502,22 +2465,56 @@ namespace WindowsFormsApp1 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class osztalyokRowChangeEvent : global::System.EventArgs {
+        public class jelenletRowChangeEvent : global::System.EventArgs {
             
-            private osztalyokRow eventRow;
+            private jelenletRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public osztalyokRowChangeEvent(osztalyokRow row, global::System.Data.DataRowAction action) {
+            public jelenletRowChangeEvent(jelenletRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public osztalyokRow Row {
+            public jelenletRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class osztalyRowChangeEvent : global::System.EventArgs {
+            
+            private osztalyRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public osztalyRowChangeEvent(osztalyRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public osztalyRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2570,56 +2567,22 @@ namespace WindowsFormsApp1 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class tanulokRowChangeEvent : global::System.EventArgs {
+        public class tantargyRowChangeEvent : global::System.EventArgs {
             
-            private tanulokRow eventRow;
+            private tantargyRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tanulokRowChangeEvent(tanulokRow row, global::System.Data.DataRowAction action) {
+            public tantargyRowChangeEvent(tantargyRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tanulokRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class orarendRowChangeEvent : global::System.EventArgs {
-            
-            private orarendRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public orarendRowChangeEvent(orarendRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public orarendRow Row {
+            public tantargyRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2635,7 +2598,7 @@ namespace WindowsFormsApp1 {
         }
     }
 }
-namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
+namespace WindowsFormsApp1.AdatTablakTableAdapters {
     
     
     /// <summary>
@@ -2647,7 +2610,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class n_orakTableAdapter : global::System.ComponentModel.Component {
+    public partial class diakTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.Odbc.OdbcDataAdapter _adapter;
         
@@ -2661,7 +2624,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public n_orakTableAdapter() {
+        public diakTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2758,16 +2721,46 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "n_orak";
-            tableMapping.ColumnMappings.Add("osztaly", "osztaly");
-            tableMapping.ColumnMappings.Add("ora", "ora");
+            tableMapping.DataSetTable = "diak";
+            tableMapping.ColumnMappings.Add("diak_id", "diak_id");
+            tableMapping.ColumnMappings.Add("diak_nev", "diak_nev");
+            tableMapping.ColumnMappings.Add("osztaly_id", "osztaly_id");
+            tableMapping.ColumnMappings.Add("kep", "kep");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `diak` WHERE ((`diak_id` = ?) AND ((? = 1 AND `diak_nev` IS NULL) OR " +
+                "(`diak_nev` = ?)) AND ((? = 1 AND `osztaly_id` IS NULL) OR (`osztaly_id` = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_diak_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_nev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `n_orak` (`osztaly`, `ora`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `diak` (`diak_id`, `diak_nev`, `osztaly_id`, `kep`) VALUES (?, ?, ?, " +
+                "?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("ora", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ora", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("kep", global::System.Data.Odbc.OdbcType.Image, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kep", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE `diak` SET `diak_id` = ?, `diak_nev` = ?, `osztaly_id` = ?, `kep` = ? WHER" +
+                "E ((`diak_id` = ?) AND ((? = 1 AND `diak_nev` IS NULL) OR (`diak_nev` = ?)) AND " +
+                "((? = 1 AND `osztaly_id` IS NULL) OR (`osztaly_id` = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("kep", global::System.Data.Odbc.OdbcType.Image, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "kep", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_diak_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_nev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2780,18 +2773,23 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `osztaly`, `ora` FROM `n_orak`";
+            this._commandCollection[0].CommandText = "SELECT `diak_id`, `diak_nev`, `osztaly_id`, `kep` FROM `diak`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT diak_nev\r\nFROM     diak\r\nWHERE  (osztaly_id = ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(teachhelperDataSet4.n_orakDataTable dataTable) {
+        public virtual int Fill(AdatTablak.diakDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2804,9 +2802,9 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual teachhelperDataSet4.n_orakDataTable GetData() {
+        public virtual AdatTablak.diakDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            teachhelperDataSet4.n_orakDataTable dataTable = new teachhelperDataSet4.n_orakDataTable();
+            AdatTablak.diakDataTable dataTable = new AdatTablak.diakDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2814,15 +2812,51 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4.n_orakDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(AdatTablak.diakDataTable dataTable, global::System.Nullable<int> osztaly_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((osztaly_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(osztaly_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AdatTablak.diakDataTable GetDataBy(global::System.Nullable<int> osztaly_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((osztaly_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(osztaly_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            AdatTablak.diakDataTable dataTable = new AdatTablak.diakDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AdatTablak.diakDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4 dataSet) {
-            return this.Adapter.Update(dataSet, "n_orak");
+        public virtual int Update(AdatTablak dataSet) {
+            return this.Adapter.Update(dataSet, "diak");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2843,19 +2877,52 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_diak_id, string Original_diak_nev, int Original_osztaly_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_diak_id));
+            if ((Original_diak_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_diak_nev");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_diak_nev));
+            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_osztaly_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string osztaly, string ora) {
-            if ((osztaly == null)) {
-                throw new global::System.ArgumentNullException("osztaly");
+        public virtual int Insert(int diak_id, string diak_nev, int osztaly_id, byte[] kep) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(diak_id));
+            if ((diak_nev == null)) {
+                throw new global::System.ArgumentNullException("diak_nev");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(osztaly));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(diak_nev));
             }
-            if ((ora == null)) {
-                throw new global::System.ArgumentNullException("ora");
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(osztaly_id));
+            if ((kep == null)) {
+                throw new global::System.ArgumentNullException("kep");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ora));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(kep));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2871,6 +2938,59 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int diak_id, string diak_nev, int osztaly_id, byte[] kep, int Original_diak_id, string Original_diak_nev, int Original_osztaly_id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(diak_id));
+            if ((diak_nev == null)) {
+                throw new global::System.ArgumentNullException("diak_nev");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(diak_nev));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(osztaly_id));
+            if ((kep == null)) {
+                throw new global::System.ArgumentNullException("kep");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(kep));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_diak_id));
+            if ((Original_diak_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_diak_nev");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_diak_nev));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_osztaly_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string diak_nev, int osztaly_id, byte[] kep, int Original_diak_id, string Original_diak_nev, int Original_osztaly_id) {
+            return this.Update(Original_diak_id, diak_nev, osztaly_id, kep, Original_diak_id, Original_diak_nev, Original_osztaly_id);
         }
     }
     
@@ -2883,7 +3003,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class osztalyokTableAdapter : global::System.ComponentModel.Component {
+    public partial class jelenletTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.Odbc.OdbcDataAdapter _adapter;
         
@@ -2897,7 +3017,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public osztalyokTableAdapter() {
+        public jelenletTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2994,27 +3114,54 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "osztalyok";
-            tableMapping.ColumnMappings.Add("tanar", "tanar");
-            tableMapping.ColumnMappings.Add("Óra szám", "Óra szám");
-            tableMapping.ColumnMappings.Add("Hétfő", "Hétfő");
-            tableMapping.ColumnMappings.Add("Kedd", "Kedd");
-            tableMapping.ColumnMappings.Add("Szerda", "Szerda");
-            tableMapping.ColumnMappings.Add("Csütörtök", "Csütörtök");
-            tableMapping.ColumnMappings.Add("Péntek", "Péntek");
+            tableMapping.DataSetTable = "jelenlet";
+            tableMapping.ColumnMappings.Add("jelenlet_id", "jelenlet_id");
+            tableMapping.ColumnMappings.Add("diak_id", "diak_id");
+            tableMapping.ColumnMappings.Add("tantargy_id", "tantargy_id");
+            tableMapping.ColumnMappings.Add("datum", "datum");
+            tableMapping.ColumnMappings.Add("jelenlet", "jelenlet");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `jelenlet` WHERE ((`jelenlet_id` = ?) AND ((? = 1 AND `diak_id` IS NULL) OR (`diak_id` = ?)) AND ((? = 1 AND `tantargy_id` IS NULL) OR (`tantargy_id` = ?)) AND ((? = 1 AND `datum` IS NULL) OR (`datum` = ?)) AND ((? = 1 AND `jelenlet` IS NULL) OR (`jelenlet` = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_datum", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelenlet", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `osztalyok` (`tanar`, `Óra szám`, `Hétfő`, `Kedd`, `Szerda`, `Csütört" +
-                "ök`, `Péntek`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `jelenlet` (`jelenlet_id`, `diak_id`, `tantargy_id`, `datum`, `jelenl" +
+                "et`) VALUES (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Óra_szám", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Óra szám", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Hétfő", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hétfő", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Kedd", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kedd", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Szerda", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Szerda", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Csütörtök", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Csütörtök", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Péntek", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Péntek", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `jelenlet` SET `jelenlet_id` = ?, `diak_id` = ?, `tantargy_id` = ?, `datum` = ?, `jelenlet` = ? WHERE ((`jelenlet_id` = ?) AND ((? = 1 AND `diak_id` IS NULL) OR (`diak_id` = ?)) AND ((? = 1 AND `tantargy_id` IS NULL) OR (`tantargy_id` = ?)) AND ((? = 1 AND `datum` IS NULL) OR (`datum` = ?)) AND ((? = 1 AND `jelenlet` IS NULL) OR (`jelenlet` = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_datum", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelenlet", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3030,8 +3177,8 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `tanar`, `Óra szám`, `Hétfő`, `Kedd`, `Szerda`, `Csütörtök`, `Péntek` FROM" +
-                " `osztalyok`";
+            this._commandCollection[0].CommandText = "SELECT `jelenlet_id`, `diak_id`, `tantargy_id`, `datum`, `jelenlet` FROM `jelenle" +
+                "t`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3039,7 +3186,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(teachhelperDataSet4.osztalyokDataTable dataTable) {
+        public virtual int Fill(AdatTablak.jelenletDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3052,9 +3199,9 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual teachhelperDataSet4.osztalyokDataTable GetData() {
+        public virtual AdatTablak.jelenletDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            teachhelperDataSet4.osztalyokDataTable dataTable = new teachhelperDataSet4.osztalyokDataTable();
+            AdatTablak.jelenletDataTable dataTable = new AdatTablak.jelenletDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3062,15 +3209,15 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4.osztalyokDataTable dataTable) {
+        public virtual int Update(AdatTablak.jelenletDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4 dataSet) {
-            return this.Adapter.Update(dataSet, "osztalyok");
+        public virtual int Update(AdatTablak dataSet) {
+            return this.Adapter.Update(dataSet, "jelenlet");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3091,49 +3238,363 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_jelenlet_id, int Original_diak_id, int Original_tantargy_id, System.DateTime Original_datum, short Original_jelenlet) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_jelenlet_id));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_diak_id));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_tantargy_id));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_datum));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((short)(Original_jelenlet));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string tanar, string Óra_szám, string Hétfő, string Kedd, string Szerda, string Csütörtök, string Péntek) {
-            if ((tanar == null)) {
-                throw new global::System.ArgumentNullException("tanar");
+        public virtual int Insert(int jelenlet_id, int diak_id, int tantargy_id, System.DateTime datum, short jelenlet) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(jelenlet_id));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(diak_id));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(tantargy_id));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(datum));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(jelenlet));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int jelenlet_id, int diak_id, int tantargy_id, System.DateTime datum, short jelenlet, int Original_jelenlet_id, int Original_diak_id, int Original_tantargy_id, System.DateTime Original_datum, short Original_jelenlet) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(jelenlet_id));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(diak_id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(tantargy_id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(datum));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(jelenlet));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_jelenlet_id));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_diak_id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_tantargy_id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_datum));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((short)(Original_jelenlet));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int diak_id, int tantargy_id, System.DateTime datum, short jelenlet, int Original_jelenlet_id, int Original_diak_id, int Original_tantargy_id, System.DateTime Original_datum, short Original_jelenlet) {
+            return this.Update(Original_jelenlet_id, diak_id, tantargy_id, datum, jelenlet, Original_jelenlet_id, Original_diak_id, Original_tantargy_id, Original_datum, Original_jelenlet);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class osztalyTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.Odbc.OdbcDataAdapter _adapter;
+        
+        private global::System.Data.Odbc.OdbcConnection _connection;
+        
+        private global::System.Data.Odbc.OdbcTransaction _transaction;
+        
+        private global::System.Data.Odbc.OdbcCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public osztalyTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.Odbc.OdbcDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.Odbc.OdbcConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.Odbc.OdbcCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.Odbc.OdbcTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.Odbc.OdbcCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "osztaly";
+            tableMapping.ColumnMappings.Add("osztaly_id", "osztaly_id");
+            tableMapping.ColumnMappings.Add("osztaly_nev", "osztaly_nev");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `osztaly` WHERE ((`osztaly_id` = ?) AND ((? = 1 AND `osztaly_nev` IS " +
+                "NULL) OR (`osztaly_nev` = ?)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_osztaly_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_osztaly_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_nev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `osztaly` (`osztaly_id`, `osztaly_nev`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE `osztaly` SET `osztaly_id` = ?, `osztaly_nev` = ? WHERE ((`osztaly_id` = ?" +
+                ") AND ((? = 1 AND `osztaly_nev` IS NULL) OR (`osztaly_nev` = ?)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_osztaly_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_osztaly_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_nev", global::System.Data.DataRowVersion.Original, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.Odbc.OdbcConnection();
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.teachhelperConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
+            this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT `osztaly_id`, `osztaly_nev` FROM `osztaly`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AdatTablak.osztalyDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AdatTablak.osztalyDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AdatTablak.osztalyDataTable dataTable = new AdatTablak.osztalyDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AdatTablak.osztalyDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AdatTablak dataSet) {
+            return this.Adapter.Update(dataSet, "osztaly");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_osztaly_id, string Original_osztaly_nev) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_osztaly_id));
+            if ((Original_osztaly_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_osztaly_nev");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(tanar));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_osztaly_nev));
             }
-            if ((Óra_szám == null)) {
-                throw new global::System.ArgumentNullException("Óra_szám");
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Óra_szám));
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
             }
-            if ((Hétfő == null)) {
-                throw new global::System.ArgumentNullException("Hétfő");
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Hétfő));
-            }
-            if ((Kedd == null)) {
-                throw new global::System.ArgumentNullException("Kedd");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Kedd));
-            }
-            if ((Szerda == null)) {
-                throw new global::System.ArgumentNullException("Szerda");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Szerda));
-            }
-            if ((Csütörtök == null)) {
-                throw new global::System.ArgumentNullException("Csütörtök");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Csütörtök));
-            }
-            if ((Péntek == null)) {
-                throw new global::System.ArgumentNullException("Péntek");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int osztaly_id, string osztaly_nev) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(osztaly_id));
+            if ((osztaly_nev == null)) {
+                throw new global::System.ArgumentNullException("osztaly_nev");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Péntek));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(osztaly_nev));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3149,6 +3610,50 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int osztaly_id, string osztaly_nev, int Original_osztaly_id, string Original_osztaly_nev) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(osztaly_id));
+            if ((osztaly_nev == null)) {
+                throw new global::System.ArgumentNullException("osztaly_nev");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(osztaly_nev));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_osztaly_id));
+            if ((Original_osztaly_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_osztaly_nev");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_osztaly_nev));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string osztaly_nev, int Original_osztaly_id, string Original_osztaly_nev) {
+            return this.Update(Original_osztaly_id, osztaly_nev, Original_osztaly_id, Original_osztaly_nev);
         }
     }
     
@@ -3273,58 +3778,53 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "tanar";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("teljesNev", "teljesNev");
-            tableMapping.ColumnMappings.Add("felhasznaloNev", "felhasznaloNev");
-            tableMapping.ColumnMappings.Add("emailCim", "emailCim");
-            tableMapping.ColumnMappings.Add("jelszo", "jelszo");
-            tableMapping.ColumnMappings.Add("admin", "admin");
+            tableMapping.ColumnMappings.Add("tanar_id", "tanar_id");
+            tableMapping.ColumnMappings.Add("tanar_nev", "tanar_nev");
+            tableMapping.ColumnMappings.Add("tanar_felhasznalonev", "tanar_felhasznalonev");
+            tableMapping.ColumnMappings.Add("tanar_email_cim", "tanar_email_cim");
+            tableMapping.ColumnMappings.Add("tanar_jelszo", "tanar_jelszo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `tanar` WHERE (((? = 1 AND `id` IS NULL) OR (`id` = ?)) AND ((? = 1 AND `teljesNev` IS NULL) OR (`teljesNev` = ?)) AND ((? = 1 AND `felhasznaloNev` IS NULL) OR (`felhasznaloNev` = ?)) AND ((? = 1 AND `emailCim` IS NULL) OR (`emailCim` = ?)) AND ((? = 1 AND `jelszo` IS NULL) OR (`jelszo` = ?)) AND (`admin` = ?))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `tanar` WHERE ((`tanar_id` = ?) AND ((? = 1 AND `tanar_nev` IS NULL) OR (`tanar_nev` = ?)) AND ((? = 1 AND `tanar_felhasznalonev` IS NULL) OR (`tanar_felhasznalonev` = ?)) AND ((? = 1 AND `tanar_email_cim` IS NULL) OR (`tanar_email_cim` = ?)) AND ((? = 1 AND `tanar_jelszo` IS NULL) OR (`tanar_jelszo` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_teljesNev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "teljesNev", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_teljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "teljesNev", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_felhasznaloNev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "felhasznaloNev", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_felhasznaloNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "felhasznaloNev", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_emailCim", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "emailCim", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_emailCim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "emailCim", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelszo", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelszo", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelszo", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_admin", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "admin", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_nev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_felhasznalonev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_felhasznalonev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_felhasznalonev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_felhasznalonev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_email_cim", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_email_cim", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_email_cim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_email_cim", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_jelszo", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_jelszo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_jelszo", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `tanar` (`teljesNev`, `felhasznaloNev`, `emailCim`, `jelszo`, `admin`" +
-                ") VALUES (?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `tanar` (`tanar_id`, `tanar_nev`, `tanar_felhasznalonev`, `tanar_emai" +
+                "l_cim`, `tanar_jelszo`) VALUES (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("teljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "teljesNev", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("felhasznaloNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "felhasznaloNev", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("emailCim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "emailCim", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelszo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("admin", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "admin", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_felhasznalonev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_felhasznalonev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_email_cim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_email_cim", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_jelszo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `tanar` SET `teljesNev` = ?, `felhasznaloNev` = ?, `emailCim` = ?, `jelszo` = ?, `admin` = ? WHERE (((? = 1 AND `id` IS NULL) OR (`id` = ?)) AND ((? = 1 AND `teljesNev` IS NULL) OR (`teljesNev` = ?)) AND ((? = 1 AND `felhasznaloNev` IS NULL) OR (`felhasznaloNev` = ?)) AND ((? = 1 AND `emailCim` IS NULL) OR (`emailCim` = ?)) AND ((? = 1 AND `jelszo` IS NULL) OR (`jelszo` = ?)) AND (`admin` = ?))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `tanar` SET `tanar_id` = ?, `tanar_nev` = ?, `tanar_felhasznalonev` = ?, `tanar_email_cim` = ?, `tanar_jelszo` = ? WHERE ((`tanar_id` = ?) AND ((? = 1 AND `tanar_nev` IS NULL) OR (`tanar_nev` = ?)) AND ((? = 1 AND `tanar_felhasznalonev` IS NULL) OR (`tanar_felhasznalonev` = ?)) AND ((? = 1 AND `tanar_email_cim` IS NULL) OR (`tanar_email_cim` = ?)) AND ((? = 1 AND `tanar_jelszo` IS NULL) OR (`tanar_jelszo` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("teljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "teljesNev", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("felhasznaloNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "felhasznaloNev", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("emailCim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "emailCim", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelszo", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("admin", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "admin", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_teljesNev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "teljesNev", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_teljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "teljesNev", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_felhasznaloNev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "felhasznaloNev", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_felhasznaloNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "felhasznaloNev", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_emailCim", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "emailCim", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_emailCim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "emailCim", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelszo", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelszo", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelszo", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_admin", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "admin", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_felhasznalonev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_felhasznalonev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_email_cim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_email_cim", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_jelszo", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_nev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_felhasznalonev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_felhasznalonev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_felhasznalonev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_felhasznalonev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_email_cim", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_email_cim", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_email_cim", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_email_cim", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_jelszo", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_jelszo", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_jelszo", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_jelszo", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3340,8 +3840,8 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `teljesNev`, `felhasznaloNev`, `emailCim`, `jelszo`, `admin` FROM `t" +
-                "anar`";
+            this._commandCollection[0].CommandText = "SELECT `tanar_id`, `tanar_nev`, `tanar_felhasznalonev`, `tanar_email_cim`, `tanar" +
+                "_jelszo` FROM `tanar`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3349,7 +3849,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(teachhelperDataSet4.tanarDataTable dataTable) {
+        public virtual int Fill(AdatTablak.tanarDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3362,9 +3862,9 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual teachhelperDataSet4.tanarDataTable GetData() {
+        public virtual AdatTablak.tanarDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            teachhelperDataSet4.tanarDataTable dataTable = new teachhelperDataSet4.tanarDataTable();
+            AdatTablak.tanarDataTable dataTable = new AdatTablak.tanarDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3372,14 +3872,14 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4.tanarDataTable dataTable) {
+        public virtual int Update(AdatTablak.tanarDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4 dataSet) {
+        public virtual int Update(AdatTablak dataSet) {
             return this.Adapter.Update(dataSet, "tanar");
         }
         
@@ -3402,42 +3902,35 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_teljesNev, string Original_felhasznaloNev, string Original_emailCim, string Original_jelszo, string Original_admin) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_id));
-            if ((Original_teljesNev == null)) {
-                throw new global::System.ArgumentNullException("Original_teljesNev");
+        public virtual int Delete(int Original_tanar_id, string Original_tanar_nev, string Original_tanar_felhasznalonev, string Original_tanar_email_cim, string Original_tanar_jelszo) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_tanar_id));
+            if ((Original_tanar_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_nev");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_teljesNev));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_tanar_nev));
             }
-            if ((Original_felhasznaloNev == null)) {
-                throw new global::System.ArgumentNullException("Original_felhasznaloNev");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_felhasznaloNev));
-            }
-            if ((Original_emailCim == null)) {
-                throw new global::System.ArgumentNullException("Original_emailCim");
+            if ((Original_tanar_felhasznalonev == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_felhasznalonev");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_emailCim));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_tanar_felhasznalonev));
             }
-            if ((Original_jelszo == null)) {
-                throw new global::System.ArgumentNullException("Original_jelszo");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_jelszo));
-            }
-            if ((Original_admin == null)) {
-                throw new global::System.ArgumentNullException("Original_admin");
+            if ((Original_tanar_email_cim == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_email_cim");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_admin));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_tanar_email_cim));
+            }
+            if ((Original_tanar_jelszo == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_jelszo");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_tanar_jelszo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3459,36 +3952,31 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string teljesNev, string felhasznaloNev, string emailCim, string jelszo, string admin) {
-            if ((teljesNev == null)) {
-                throw new global::System.ArgumentNullException("teljesNev");
+        public virtual int Insert(int tanar_id, string tanar_nev, string tanar_felhasznalonev, string tanar_email_cim, string tanar_jelszo) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(tanar_id));
+            if ((tanar_nev == null)) {
+                throw new global::System.ArgumentNullException("tanar_nev");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(teljesNev));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(tanar_nev));
             }
-            if ((felhasznaloNev == null)) {
-                throw new global::System.ArgumentNullException("felhasznaloNev");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(felhasznaloNev));
-            }
-            if ((emailCim == null)) {
-                throw new global::System.ArgumentNullException("emailCim");
+            if ((tanar_felhasznalonev == null)) {
+                throw new global::System.ArgumentNullException("tanar_felhasznalonev");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(emailCim));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(tanar_felhasznalonev));
             }
-            if ((jelszo == null)) {
-                throw new global::System.ArgumentNullException("jelszo");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(jelszo));
-            }
-            if ((admin == null)) {
-                throw new global::System.ArgumentNullException("admin");
+            if ((tanar_email_cim == null)) {
+                throw new global::System.ArgumentNullException("tanar_email_cim");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(admin));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(tanar_email_cim));
+            }
+            if ((tanar_jelszo == null)) {
+                throw new global::System.ArgumentNullException("tanar_jelszo");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(tanar_jelszo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3510,72 +3998,60 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string teljesNev, string felhasznaloNev, string emailCim, string jelszo, string admin, int Original_id, string Original_teljesNev, string Original_felhasznaloNev, string Original_emailCim, string Original_jelszo, string Original_admin) {
-            if ((teljesNev == null)) {
-                throw new global::System.ArgumentNullException("teljesNev");
+        public virtual int Update(int tanar_id, string tanar_nev, string tanar_felhasznalonev, string tanar_email_cim, string tanar_jelszo, int Original_tanar_id, string Original_tanar_nev, string Original_tanar_felhasznalonev, string Original_tanar_email_cim, string Original_tanar_jelszo) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(tanar_id));
+            if ((tanar_nev == null)) {
+                throw new global::System.ArgumentNullException("tanar_nev");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(teljesNev));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(tanar_nev));
             }
-            if ((felhasznaloNev == null)) {
-                throw new global::System.ArgumentNullException("felhasznaloNev");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(felhasznaloNev));
-            }
-            if ((emailCim == null)) {
-                throw new global::System.ArgumentNullException("emailCim");
+            if ((tanar_felhasznalonev == null)) {
+                throw new global::System.ArgumentNullException("tanar_felhasznalonev");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(emailCim));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(tanar_felhasznalonev));
             }
-            if ((jelszo == null)) {
-                throw new global::System.ArgumentNullException("jelszo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(jelszo));
-            }
-            if ((admin == null)) {
-                throw new global::System.ArgumentNullException("admin");
+            if ((tanar_email_cim == null)) {
+                throw new global::System.ArgumentNullException("tanar_email_cim");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(admin));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(tanar_email_cim));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id));
-            if ((Original_teljesNev == null)) {
-                throw new global::System.ArgumentNullException("Original_teljesNev");
+            if ((tanar_jelszo == null)) {
+                throw new global::System.ArgumentNullException("tanar_jelszo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_teljesNev));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(tanar_jelszo));
             }
-            if ((Original_felhasznaloNev == null)) {
-                throw new global::System.ArgumentNullException("Original_felhasznaloNev");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_felhasznaloNev));
-            }
-            if ((Original_emailCim == null)) {
-                throw new global::System.ArgumentNullException("Original_emailCim");
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_tanar_id));
+            if ((Original_tanar_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_nev");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_emailCim));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_tanar_nev));
             }
-            if ((Original_jelszo == null)) {
-                throw new global::System.ArgumentNullException("Original_jelszo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_jelszo));
-            }
-            if ((Original_admin == null)) {
-                throw new global::System.ArgumentNullException("Original_admin");
+            if ((Original_tanar_felhasznalonev == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_felhasznalonev");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_admin));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_tanar_felhasznalonev));
+            }
+            if ((Original_tanar_email_cim == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_email_cim");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_tanar_email_cim));
+            }
+            if ((Original_tanar_jelszo == null)) {
+                throw new global::System.ArgumentNullException("Original_tanar_jelszo");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_tanar_jelszo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3592,6 +4068,14 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                 }
             }
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string tanar_nev, string tanar_felhasznalonev, string tanar_email_cim, string tanar_jelszo, int Original_tanar_id, string Original_tanar_nev, string Original_tanar_felhasznalonev, string Original_tanar_email_cim, string Original_tanar_jelszo) {
+            return this.Update(Original_tanar_id, tanar_nev, tanar_felhasznalonev, tanar_email_cim, tanar_jelszo, Original_tanar_id, Original_tanar_nev, Original_tanar_felhasznalonev, Original_tanar_email_cim, Original_tanar_jelszo);
+        }
     }
     
     /// <summary>
@@ -3603,7 +4087,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tanulokTableAdapter : global::System.ComponentModel.Component {
+    public partial class tantargyTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.Odbc.OdbcDataAdapter _adapter;
         
@@ -3617,7 +4101,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public tanulokTableAdapter() {
+        public tantargyTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3714,43 +4198,44 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tanulok";
-            tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("TeljesNev", "TeljesNev");
-            tableMapping.ColumnMappings.Add("jelenlet", "jelenlet");
+            tableMapping.DataSetTable = "tantargy";
+            tableMapping.ColumnMappings.Add("tantargy_id", "tantargy_id");
+            tableMapping.ColumnMappings.Add("tantargy_nev", "tantargy_nev");
+            tableMapping.ColumnMappings.Add("tanar_id", "tanar_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `tanulok` WHERE (((? = 1 AND `id` IS NULL) OR (`id` = ?)) AND ((? = 1" +
-                " AND `TeljesNev` IS NULL) OR (`TeljesNev` = ?)) AND ((? = 1 AND `jelenlet` IS NU" +
-                "LL) OR (`jelenlet` = ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `tantargy` WHERE ((`tantargy_id` = ?) AND ((? = 1 AND `tantargy_nev` " +
+                "IS NULL) OR (`tantargy_nev` = ?)) AND ((? = 1 AND `tanar_id` IS NULL) OR (`tanar" +
+                "_id` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_TeljesNev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TeljesNev", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_TeljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TeljesNev", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelenlet", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tantargy_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_nev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `tanulok` (`TeljesNev`, `jelenlet`) VALUES (?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `tantargy` (`tantargy_id`, `tantargy_nev`, `tanar_id`) VALUES (?, ?, " +
+                "?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("TeljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TeljesNev", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `tanulok` SET `TeljesNev` = ?, `jelenlet` = ? WHERE (((? = 1 AND `id` IS N" +
-                "ULL) OR (`id` = ?)) AND ((? = 1 AND `TeljesNev` IS NULL) OR (`TeljesNev` = ?)) A" +
-                "ND ((? = 1 AND `jelenlet` IS NULL) OR (`jelenlet` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `tantargy` SET `tantargy_id` = ?, `tantargy_nev` = ?, `tanar_id` = ? WHERE" +
+                " ((`tantargy_id` = ?) AND ((? = 1 AND `tantargy_nev` IS NULL) OR (`tantargy_nev`" +
+                " = ?)) AND ((? = 1 AND `tanar_id` IS NULL) OR (`tanar_id` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("TeljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TeljesNev", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_TeljesNev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TeljesNev", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_TeljesNev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "TeljesNev", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelenlet", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_nev", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tantargy_nev", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_nev", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_nev", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_nev", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tanar_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar_id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3766,7 +4251,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `TeljesNev`, `jelenlet` FROM `tanulok`";
+            this._commandCollection[0].CommandText = "SELECT `tantargy_id`, `tantargy_nev`, `tanar_id` FROM `tantargy`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3774,7 +4259,7 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(teachhelperDataSet4.tanulokDataTable dataTable) {
+        public virtual int Fill(AdatTablak.tantargyDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3787,9 +4272,9 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual teachhelperDataSet4.tanulokDataTable GetData() {
+        public virtual AdatTablak.tantargyDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            teachhelperDataSet4.tanulokDataTable dataTable = new teachhelperDataSet4.tanulokDataTable();
+            AdatTablak.tantargyDataTable dataTable = new AdatTablak.tantargyDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3797,15 +4282,15 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4.tanulokDataTable dataTable) {
+        public virtual int Update(AdatTablak.tantargyDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4 dataSet) {
-            return this.Adapter.Update(dataSet, "tanulok");
+        public virtual int Update(AdatTablak dataSet) {
+            return this.Adapter.Update(dataSet, "tantargy");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3827,18 +4312,17 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_TeljesNev, short Original_jelenlet) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_id));
-            if ((Original_TeljesNev == null)) {
-                throw new global::System.ArgumentNullException("Original_TeljesNev");
+        public virtual int Delete(int Original_tantargy_id, string Original_tantargy_nev, int Original_tanar_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_tantargy_id));
+            if ((Original_tantargy_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_tantargy_nev");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_TeljesNev));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_tantargy_nev));
             }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((short)(Original_jelenlet));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_tanar_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3859,14 +4343,15 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TeljesNev, short jelenlet) {
-            if ((TeljesNev == null)) {
-                throw new global::System.ArgumentNullException("TeljesNev");
+        public virtual int Insert(int tantargy_id, string tantargy_nev, int tanar_id) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(tantargy_id));
+            if ((tantargy_nev == null)) {
+                throw new global::System.ArgumentNullException("tantargy_nev");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(TeljesNev));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(tantargy_nev));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(jelenlet));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(tanar_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3887,25 +4372,25 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TeljesNev, short jelenlet, int Original_id, string Original_TeljesNev, short Original_jelenlet) {
-            if ((TeljesNev == null)) {
-                throw new global::System.ArgumentNullException("TeljesNev");
+        public virtual int Update(int tantargy_id, string tantargy_nev, int tanar_id, int Original_tantargy_id, string Original_tantargy_nev, int Original_tanar_id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(tantargy_id));
+            if ((tantargy_nev == null)) {
+                throw new global::System.ArgumentNullException("tantargy_nev");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(TeljesNev));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(tantargy_nev));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(jelenlet));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id));
-            if ((Original_TeljesNev == null)) {
-                throw new global::System.ArgumentNullException("Original_TeljesNev");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(tanar_id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_tantargy_id));
+            if ((Original_tantargy_nev == null)) {
+                throw new global::System.ArgumentNullException("Original_tantargy_nev");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_TeljesNev));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_tantargy_nev));
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Original_jelenlet));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_tanar_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3921,300 +4406,13 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                 }
             }
         }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class orarendTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.Odbc.OdbcDataAdapter _adapter;
-        
-        private global::System.Data.Odbc.OdbcConnection _connection;
-        
-        private global::System.Data.Odbc.OdbcTransaction _transaction;
-        
-        private global::System.Data.Odbc.OdbcCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public orarendTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.Odbc.OdbcDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.Odbc.OdbcConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.Odbc.OdbcCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.Odbc.OdbcTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.Odbc.OdbcCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.Odbc.OdbcDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "orarend";
-            tableMapping.ColumnMappings.Add("tanar", "tanar");
-            tableMapping.ColumnMappings.Add("Óra szám", "Óra szám");
-            tableMapping.ColumnMappings.Add("Hétfő", "Hétfő");
-            tableMapping.ColumnMappings.Add("Kedd", "Kedd");
-            tableMapping.ColumnMappings.Add("Szerda", "Szerda");
-            tableMapping.ColumnMappings.Add("Csütörtök", "Csütörtök");
-            tableMapping.ColumnMappings.Add("Péntek", "Péntek");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `orarend` (`tanar`, `Óra szám`, `Hétfő`, `Kedd`, `Szerda`, `Csütörtök" +
-                "`, `Péntek`) VALUES (?, ?, ?, ?, ?, ?, ?)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tanar", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tanar", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Óra_szám", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Óra szám", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Hétfő", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hétfő", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Kedd", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kedd", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Szerda", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Szerda", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Csütörtök", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Csütörtök", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Péntek", global::System.Data.Odbc.OdbcType.NVarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Péntek", global::System.Data.DataRowVersion.Current, false, null));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.Odbc.OdbcConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.teachhelperConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
-            this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `tanar`, `Óra szám`, `Hétfő`, `Kedd`, `Szerda`, `Csütörtök`, `Péntek` FROM" +
-                " `orarend`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT `Óra szám`, Hétfő, Kedd, Szerda, Csütörtök, Péntek\r\nFROM     orarend";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(teachhelperDataSet4.orarendDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual teachhelperDataSet4.orarendDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            teachhelperDataSet4.orarendDataTable dataTable = new teachhelperDataSet4.orarendDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(teachhelperDataSet4.orarendDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4.orarendDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(teachhelperDataSet4 dataSet) {
-            return this.Adapter.Update(dataSet, "orarend");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string tanar, string Óra_szám, string Hétfő, string Kedd, string Szerda, string Csütörtök, string Péntek) {
-            if ((tanar == null)) {
-                throw new global::System.ArgumentNullException("tanar");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(tanar));
-            }
-            if ((Óra_szám == null)) {
-                throw new global::System.ArgumentNullException("Óra_szám");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Óra_szám));
-            }
-            if ((Hétfő == null)) {
-                throw new global::System.ArgumentNullException("Hétfő");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Hétfő));
-            }
-            if ((Kedd == null)) {
-                throw new global::System.ArgumentNullException("Kedd");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Kedd));
-            }
-            if ((Szerda == null)) {
-                throw new global::System.ArgumentNullException("Szerda");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Szerda));
-            }
-            if ((Csütörtök == null)) {
-                throw new global::System.ArgumentNullException("Csütörtök");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Csütörtök));
-            }
-            if ((Péntek == null)) {
-                throw new global::System.ArgumentNullException("Péntek");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Péntek));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string tantargy_nev, int tanar_id, int Original_tantargy_id, string Original_tantargy_nev, int Original_tanar_id) {
+            return this.Update(Original_tantargy_id, tantargy_nev, tanar_id, Original_tantargy_id, Original_tantargy_nev, Original_tanar_id);
         }
     }
     
@@ -4230,15 +4428,15 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private n_orakTableAdapter _n_orakTableAdapter;
+        private diakTableAdapter _diakTableAdapter;
         
-        private osztalyokTableAdapter _osztalyokTableAdapter;
+        private jelenletTableAdapter _jelenletTableAdapter;
+        
+        private osztalyTableAdapter _osztalyTableAdapter;
         
         private tanarTableAdapter _tanarTableAdapter;
         
-        private tanulokTableAdapter _tanulokTableAdapter;
-        
-        private orarendTableAdapter _orarendTableAdapter;
+        private tantargyTableAdapter _tantargyTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -4260,12 +4458,12 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public n_orakTableAdapter n_orakTableAdapter {
+        public diakTableAdapter diakTableAdapter {
             get {
-                return this._n_orakTableAdapter;
+                return this._diakTableAdapter;
             }
             set {
-                this._n_orakTableAdapter = value;
+                this._diakTableAdapter = value;
             }
         }
         
@@ -4274,12 +4472,26 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public osztalyokTableAdapter osztalyokTableAdapter {
+        public jelenletTableAdapter jelenletTableAdapter {
             get {
-                return this._osztalyokTableAdapter;
+                return this._jelenletTableAdapter;
             }
             set {
-                this._osztalyokTableAdapter = value;
+                this._jelenletTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public osztalyTableAdapter osztalyTableAdapter {
+            get {
+                return this._osztalyTableAdapter;
+            }
+            set {
+                this._osztalyTableAdapter = value;
             }
         }
         
@@ -4302,26 +4514,12 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tanulokTableAdapter tanulokTableAdapter {
+        public tantargyTableAdapter tantargyTableAdapter {
             get {
-                return this._tanulokTableAdapter;
+                return this._tantargyTableAdapter;
             }
             set {
-                this._tanulokTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public orarendTableAdapter orarendTableAdapter {
-            get {
-                return this._orarendTableAdapter;
-            }
-            set {
-                this._orarendTableAdapter = value;
+                this._tantargyTableAdapter = value;
             }
         }
         
@@ -4344,25 +4542,25 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._n_orakTableAdapter != null) 
-                            && (this._n_orakTableAdapter.Connection != null))) {
-                    return this._n_orakTableAdapter.Connection;
+                if (((this._diakTableAdapter != null) 
+                            && (this._diakTableAdapter.Connection != null))) {
+                    return this._diakTableAdapter.Connection;
                 }
-                if (((this._osztalyokTableAdapter != null) 
-                            && (this._osztalyokTableAdapter.Connection != null))) {
-                    return this._osztalyokTableAdapter.Connection;
+                if (((this._jelenletTableAdapter != null) 
+                            && (this._jelenletTableAdapter.Connection != null))) {
+                    return this._jelenletTableAdapter.Connection;
+                }
+                if (((this._osztalyTableAdapter != null) 
+                            && (this._osztalyTableAdapter.Connection != null))) {
+                    return this._osztalyTableAdapter.Connection;
                 }
                 if (((this._tanarTableAdapter != null) 
                             && (this._tanarTableAdapter.Connection != null))) {
                     return this._tanarTableAdapter.Connection;
                 }
-                if (((this._tanulokTableAdapter != null) 
-                            && (this._tanulokTableAdapter.Connection != null))) {
-                    return this._tanulokTableAdapter.Connection;
-                }
-                if (((this._orarendTableAdapter != null) 
-                            && (this._orarendTableAdapter.Connection != null))) {
-                    return this._orarendTableAdapter.Connection;
+                if (((this._tantargyTableAdapter != null) 
+                            && (this._tantargyTableAdapter.Connection != null))) {
+                    return this._tantargyTableAdapter.Connection;
                 }
                 return null;
             }
@@ -4377,19 +4575,19 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._n_orakTableAdapter != null)) {
+                if ((this._diakTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._osztalyokTableAdapter != null)) {
+                if ((this._jelenletTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._osztalyTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._tanarTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tanulokTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._orarendTableAdapter != null)) {
+                if ((this._tantargyTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -4401,23 +4599,32 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(teachhelperDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(AdatTablak dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._n_orakTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.n_orak.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._diakTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.diak.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._n_orakTableAdapter.Update(updatedRows));
+                    result = (result + this._diakTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._osztalyokTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.osztalyok.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._jelenletTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.jelenlet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._osztalyokTableAdapter.Update(updatedRows));
+                    result = (result + this._jelenletTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._osztalyTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.osztaly.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._osztalyTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4430,21 +4637,12 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tanulokTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tanulok.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tantargyTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tantargy.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tanulokTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._orarendTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.orarend.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._orarendTableAdapter.Update(updatedRows));
+                    result = (result + this._tantargyTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4456,21 +4654,29 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(teachhelperDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(AdatTablak dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._n_orakTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.n_orak.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._diakTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.diak.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._n_orakTableAdapter.Update(addedRows));
+                    result = (result + this._diakTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._osztalyokTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.osztalyok.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._jelenletTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.jelenlet.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._osztalyokTableAdapter.Update(addedRows));
+                    result = (result + this._jelenletTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._osztalyTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.osztaly.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._osztalyTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4482,19 +4688,11 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tanulokTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tanulok.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tantargyTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tantargy.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tanulokTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._orarendTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.orarend.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._orarendTableAdapter.Update(addedRows));
+                    result = (result + this._tantargyTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4506,21 +4704,13 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(teachhelperDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(AdatTablak dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._orarendTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.orarend.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tantargyTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tantargy.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._orarendTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tanulokTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tanulok.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tanulokTableAdapter.Update(deletedRows));
+                    result = (result + this._tantargyTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4532,19 +4722,27 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._osztalyokTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.osztalyok.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._osztalyTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.osztaly.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._osztalyokTableAdapter.Update(deletedRows));
+                    result = (result + this._osztalyTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._n_orakTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.n_orak.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._jelenletTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.jelenlet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._n_orakTableAdapter.Update(deletedRows));
+                    result = (result + this._jelenletTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._diakTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.diak.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._diakTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4580,20 +4778,25 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(teachhelperDataSet4 dataSet) {
+        public virtual int UpdateAll(AdatTablak dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._n_orakTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._n_orakTableAdapter.Connection) == false))) {
+            if (((this._diakTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._diakTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._osztalyokTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._osztalyokTableAdapter.Connection) == false))) {
+            if (((this._jelenletTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._jelenletTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._osztalyTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._osztalyTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -4602,13 +4805,8 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._tanulokTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tanulokTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._orarendTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._orarendTableAdapter.Connection) == false))) {
+            if (((this._tantargyTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tantargyTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -4644,22 +4842,31 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._n_orakTableAdapter != null)) {
-                    revertConnections.Add(this._n_orakTableAdapter, this._n_orakTableAdapter.Connection);
-                    this._n_orakTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
-                    this._n_orakTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
-                    if (this._n_orakTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._n_orakTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._n_orakTableAdapter.Adapter);
+                if ((this._diakTableAdapter != null)) {
+                    revertConnections.Add(this._diakTableAdapter, this._diakTableAdapter.Connection);
+                    this._diakTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
+                    this._diakTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
+                    if (this._diakTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._diakTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._diakTableAdapter.Adapter);
                     }
                 }
-                if ((this._osztalyokTableAdapter != null)) {
-                    revertConnections.Add(this._osztalyokTableAdapter, this._osztalyokTableAdapter.Connection);
-                    this._osztalyokTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
-                    this._osztalyokTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
-                    if (this._osztalyokTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._osztalyokTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._osztalyokTableAdapter.Adapter);
+                if ((this._jelenletTableAdapter != null)) {
+                    revertConnections.Add(this._jelenletTableAdapter, this._jelenletTableAdapter.Connection);
+                    this._jelenletTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
+                    this._jelenletTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
+                    if (this._jelenletTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._jelenletTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._jelenletTableAdapter.Adapter);
+                    }
+                }
+                if ((this._osztalyTableAdapter != null)) {
+                    revertConnections.Add(this._osztalyTableAdapter, this._osztalyTableAdapter.Connection);
+                    this._osztalyTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
+                    this._osztalyTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
+                    if (this._osztalyTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._osztalyTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._osztalyTableAdapter.Adapter);
                     }
                 }
                 if ((this._tanarTableAdapter != null)) {
@@ -4671,22 +4878,13 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tanarTableAdapter.Adapter);
                     }
                 }
-                if ((this._tanulokTableAdapter != null)) {
-                    revertConnections.Add(this._tanulokTableAdapter, this._tanulokTableAdapter.Connection);
-                    this._tanulokTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
-                    this._tanulokTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
-                    if (this._tanulokTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tanulokTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tanulokTableAdapter.Adapter);
-                    }
-                }
-                if ((this._orarendTableAdapter != null)) {
-                    revertConnections.Add(this._orarendTableAdapter, this._orarendTableAdapter.Connection);
-                    this._orarendTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
-                    this._orarendTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
-                    if (this._orarendTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._orarendTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._orarendTableAdapter.Adapter);
+                if ((this._tantargyTableAdapter != null)) {
+                    revertConnections.Add(this._tantargyTableAdapter, this._tantargyTableAdapter.Connection);
+                    this._tantargyTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
+                    this._tantargyTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
+                    if (this._tantargyTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tantargyTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tantargyTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -4747,25 +4945,25 @@ namespace WindowsFormsApp1.teachhelperDataSet4TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._n_orakTableAdapter != null)) {
-                    this._n_orakTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._n_orakTableAdapter]));
-                    this._n_orakTableAdapter.Transaction = null;
+                if ((this._diakTableAdapter != null)) {
+                    this._diakTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._diakTableAdapter]));
+                    this._diakTableAdapter.Transaction = null;
                 }
-                if ((this._osztalyokTableAdapter != null)) {
-                    this._osztalyokTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._osztalyokTableAdapter]));
-                    this._osztalyokTableAdapter.Transaction = null;
+                if ((this._jelenletTableAdapter != null)) {
+                    this._jelenletTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._jelenletTableAdapter]));
+                    this._jelenletTableAdapter.Transaction = null;
+                }
+                if ((this._osztalyTableAdapter != null)) {
+                    this._osztalyTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._osztalyTableAdapter]));
+                    this._osztalyTableAdapter.Transaction = null;
                 }
                 if ((this._tanarTableAdapter != null)) {
                     this._tanarTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._tanarTableAdapter]));
                     this._tanarTableAdapter.Transaction = null;
                 }
-                if ((this._tanulokTableAdapter != null)) {
-                    this._tanulokTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._tanulokTableAdapter]));
-                    this._tanulokTableAdapter.Transaction = null;
-                }
-                if ((this._orarendTableAdapter != null)) {
-                    this._orarendTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._orarendTableAdapter]));
-                    this._orarendTableAdapter.Transaction = null;
+                if ((this._tantargyTableAdapter != null)) {
+                    this._tantargyTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._tantargyTableAdapter]));
+                    this._tantargyTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

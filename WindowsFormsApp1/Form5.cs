@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static WindowsFormsApp1.AktualisFelhasznalok;
 
 namespace WindowsFormsApp1
 {
@@ -16,38 +17,59 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public static String diak_id;
+        public static String osztaly_id;
+        private void Form5_Load(object sender, EventArgs e)
         {
-            odbcConnection1.Open();
-            odbcCommand1.Parameters[1].Value = AktualisFelhasznalok.ora;
-            odbcCommand1.Parameters[0].Value = this.comboBox1.GetItemText(this.comboBox1.SelectedItem);
-            odbcCommand1.Parameters[2].Value = AktualisFelhasznalok.orak;
-            odbcCommand1.Parameters[3].Value = AktualisFelhasznalok.nap;
-            String nap = Convert.ToString(AktualisFelhasznalok.nap);
-            if (nap == "1")
-            {
-                odbcCommand1.Parameters[3].Value = "Hétfő";
-            } else if (nap == "2")
-            {
-                odbcCommand1.Parameters[3].Value = "Kedd";
-            }
-            else if (nap == "3")
-            {
-                odbcCommand1.Parameters[3].Value = "Szerda";
-            }
-            else if (nap == "4")
-            {
-                odbcCommand1.Parameters[3].Value = "Csütörtök";
-            }
-            else if (nap == "5")
-            {
-                odbcCommand1.Parameters[3].Value = "Péntek";
-            }
-            odbcCommand1.ExecuteNonQuery();
-            odbcConnection1.Close();
+            // TODO: This line of code loads data into the 'AdatTablak.diak' table. You can move, or remove it, as needed.
+            this.diakTableAdapter.Fill(this.AdatTablak.diak);
 
+            tantargy.Text = AktualisFelhasznalok.aktualis_tantargy;
+            ora.Text = AktualisFelhasznalok.ora;
+            nap.Text = AktualisFelhasznalok.nap;
+            datum.Text = AktualisFelhasznalok.datum;
+            osztaly.Text = AktualisFelhasznalok.aktualis_osztaly;
+            System.Data.Odbc.OdbcDataReader myreader;
+            con.Open();
+            dsOsztaly.Parameters[0].Value = AktualisFelhasznalok.aktualis_osztaly;
+            //MessageBox.Show(Convert.ToString( odbcCommand1.Parameters[0].Value));
+
+
+            myreader = dsOsztaly.ExecuteReader();
+            
+            if (myreader.Read())
+            {
+                osztaly_id = myreader.GetString(myreader.GetOrdinal("osztaly_id"));
+                myreader.Close();
+                try
+                {
+                    this.diakTableAdapter.FillBy(this.AdatTablak.diak, new System.Nullable<int>(((int)(System.Convert.ChangeType(osztaly_id, typeof(int))))));
+                }
+                catch (System.Exception ex)
+                {
+                }
+            }
+            dsOsszehasonlit.Parameters[0].Value = Convert.ToString(osztaly_id);
+            dsOsszehasonlit.Parameters[1].Value = Convert.ToString(osztaly_id);
+                myreader = dsOsszehasonlit.ExecuteReader();
+            if (myreader.Read())
+            {
+                diak_id = myreader.GetString(myreader.GetOrdinal("diak_id"));
+                con.Close();
+
+            }
+
+            AktualisFelhasznalok.letszam = Convert.ToInt32(diak_id);
+                string letszam = Convert.ToString(AktualisFelhasznalok.letszam);
+                letsz.Text = letszam;
         }
 
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            hub f3 = new hub();
+            f3.Show();
+            this.Hide();
+        }
     }
+
 }

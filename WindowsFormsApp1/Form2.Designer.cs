@@ -52,15 +52,14 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.password2 = new System.Windows.Forms.TextBox();
+            this.tabelLayoutPanel1 = new WindowsFormsApp1.TabelLayoutPanel();
+            this.reg = new CustomControls.RJControls.RJButton();
             this.cmdRegisztracio = new System.Data.Odbc.OdbcCommand();
             this.conTeachHelper = new System.Data.Odbc.OdbcConnection();
             this.odbcCommandBuilder1 = new System.Data.Odbc.OdbcCommandBuilder();
             this.odbcDataAdapter1 = new System.Data.Odbc.OdbcDataAdapter();
             this.odbcSelectCommand1 = new System.Data.Odbc.OdbcCommand();
-            this.teachhelperDataSet1 = new WindowsFormsApp1.teachhelperDataSet();
             this.cmdBejelentkezes = new System.Data.Odbc.OdbcCommand();
-            this.tabelLayoutPanel1 = new WindowsFormsApp1.TabelLayoutPanel();
-            this.reg = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -81,7 +80,6 @@
             this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teachhelperDataSet1)).BeginInit();
             this.tabelLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -461,55 +459,6 @@
             this.password2.Enter += new System.EventHandler(this.password2_Enter);
             this.password2.Leave += new System.EventHandler(this.password2_Leave);
             // 
-            // cmdRegisztracio
-            // 
-            this.cmdRegisztracio.CommandText = "INSERT INTO tanar\r\n                  (emailCim, felhasznaloNev, jelszo, teljesNev" +
-    ")\r\nVALUES (?, ?, ?, ?)";
-            this.cmdRegisztracio.Connection = this.conTeachHelper;
-            this.cmdRegisztracio.Parameters.AddRange(new System.Data.Odbc.OdbcParameter[] {
-            new System.Data.Odbc.OdbcParameter("email", System.Data.Odbc.OdbcType.NVarChar),
-            new System.Data.Odbc.OdbcParameter("felhasznalo_nev", System.Data.Odbc.OdbcType.NVarChar),
-            new System.Data.Odbc.OdbcParameter("jelszo", System.Data.Odbc.OdbcType.NVarChar),
-            new System.Data.Odbc.OdbcParameter("nev", System.Data.Odbc.OdbcType.NVarChar)});
-            // 
-            // conTeachHelper
-            // 
-            this.conTeachHelper.ConnectionString = "Dsn=localhost;uid=root;database=teachhelper;port=3306";
-            // 
-            // odbcCommandBuilder1
-            // 
-            this.odbcCommandBuilder1.DataAdapter = this.odbcDataAdapter1;
-            // 
-            // odbcDataAdapter1
-            // 
-            this.odbcDataAdapter1.SelectCommand = this.odbcSelectCommand1;
-            this.odbcDataAdapter1.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
-            new System.Data.Common.DataTableMapping("Table", "Table", new System.Data.Common.DataColumnMapping[] {
-                        new System.Data.Common.DataColumnMapping("id", "id"),
-                        new System.Data.Common.DataColumnMapping("fullname", "fullname"),
-                        new System.Data.Common.DataColumnMapping("username", "username"),
-                        new System.Data.Common.DataColumnMapping("email", "email"),
-                        new System.Data.Common.DataColumnMapping("password", "password")})});
-            // 
-            // odbcSelectCommand1
-            // 
-            this.odbcSelectCommand1.CommandText = "SELECT        felhasznalok.*\r\nFROM            felhasznalok";
-            this.odbcSelectCommand1.Connection = this.conTeachHelper;
-            // 
-            // teachhelperDataSet1
-            // 
-            this.teachhelperDataSet1.DataSetName = "teachhelperDataSet";
-            this.teachhelperDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cmdBejelentkezes
-            // 
-            this.cmdBejelentkezes.CommandText = "SELECT COUNT(felhasznaloNev) AS c_felh\r\nFROM     tanar\r\nWHERE  (felhasznaloNev = " +
-    "?) AND (jelszo = ?);";
-            this.cmdBejelentkezes.Connection = this.conTeachHelper;
-            this.cmdBejelentkezes.Parameters.AddRange(new System.Data.Odbc.OdbcParameter[] {
-            new System.Data.Odbc.OdbcParameter("felhasznalo_nev", System.Data.Odbc.OdbcType.NVarChar, 100),
-            new System.Data.Odbc.OdbcParameter("jelszo", System.Data.Odbc.OdbcType.NVarChar, 100)});
-            // 
             // tabelLayoutPanel1
             // 
             this.tabelLayoutPanel1.ColumnCount = 3;
@@ -550,6 +499,50 @@
             this.reg.UseVisualStyleBackColor = false;
             this.reg.Click += new System.EventHandler(this.reg_Click);
             // 
+            // cmdRegisztracio
+            // 
+            this.cmdRegisztracio.CommandText = "INSERT INTO tanar\r\n                  (tanar_email_cim, tanar_felhasznalonev, tana" +
+    "r_jelszo, tanar_nev)\r\nVALUES (?, ?, ?, ?)";
+            this.cmdRegisztracio.Connection = this.conTeachHelper;
+            this.cmdRegisztracio.Parameters.AddRange(new System.Data.Odbc.OdbcParameter[] {
+            new System.Data.Odbc.OdbcParameter("email", System.Data.Odbc.OdbcType.NVarChar, 50),
+            new System.Data.Odbc.OdbcParameter("felhasznalo_nev", System.Data.Odbc.OdbcType.NVarChar, 50),
+            new System.Data.Odbc.OdbcParameter("jelszo", System.Data.Odbc.OdbcType.NVarChar, 50),
+            new System.Data.Odbc.OdbcParameter("nev", System.Data.Odbc.OdbcType.NVarChar, 50)});
+            // 
+            // conTeachHelper
+            // 
+            this.conTeachHelper.ConnectionString = "Dsn=localhost;uid=root;database=teachhelper;port=3306";
+            // 
+            // odbcCommandBuilder1
+            // 
+            this.odbcCommandBuilder1.DataAdapter = this.odbcDataAdapter1;
+            // 
+            // odbcDataAdapter1
+            // 
+            this.odbcDataAdapter1.SelectCommand = this.odbcSelectCommand1;
+            this.odbcDataAdapter1.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+            new System.Data.Common.DataTableMapping("Table", "Table", new System.Data.Common.DataColumnMapping[] {
+                        new System.Data.Common.DataColumnMapping("id", "id"),
+                        new System.Data.Common.DataColumnMapping("fullname", "fullname"),
+                        new System.Data.Common.DataColumnMapping("username", "username"),
+                        new System.Data.Common.DataColumnMapping("email", "email"),
+                        new System.Data.Common.DataColumnMapping("password", "password")})});
+            // 
+            // odbcSelectCommand1
+            // 
+            this.odbcSelectCommand1.CommandText = "SELECT        felhasznalok.*\r\nFROM            felhasznalok";
+            this.odbcSelectCommand1.Connection = this.conTeachHelper;
+            // 
+            // cmdBejelentkezes
+            // 
+            this.cmdBejelentkezes.CommandText = "SELECT COUNT(tanar_felhasznalonev) AS c_felh\r\nFROM     tanar\r\nWHERE  (tanar_felha" +
+    "sznalonev = ?) AND (tanar_jelszo = ?);";
+            this.cmdBejelentkezes.Connection = this.conTeachHelper;
+            this.cmdBejelentkezes.Parameters.AddRange(new System.Data.Odbc.OdbcParameter[] {
+            new System.Data.Odbc.OdbcParameter("felhasznalo_nev", System.Data.Odbc.OdbcType.NVarChar, 100),
+            new System.Data.Odbc.OdbcParameter("jelszo", System.Data.Odbc.OdbcType.NVarChar, 100)});
+            // 
             // Regisztracio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -587,7 +580,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teachhelperDataSet1)).EndInit();
             this.tabelLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -624,7 +616,6 @@
         private System.Windows.Forms.TextBox password2;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox password;
-        private teachhelperDataSet teachhelperDataSet1;
         private System.Data.Odbc.OdbcCommand cmdBejelentkezes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
     }

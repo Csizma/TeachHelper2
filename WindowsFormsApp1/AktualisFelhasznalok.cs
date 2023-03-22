@@ -10,10 +10,11 @@ namespace WindowsFormsApp1
     {
         public static String aktualis_felhasznalo = "";
         public static String aktualis_jelszo = "";
-        public static Boolean admin = false;
-        public static Object ora;
-        public static Object orak;
-        public static Object nap;
-        public static Object osztaly;
+        public static String aktualis_tantargy = "";
+        public static String aktualis_osztaly = "";
+        public static String nap = "";
+        public static String ora = "";
+        public static String datum = "";
+        public static int letszam;
     }
 }
