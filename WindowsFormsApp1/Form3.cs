@@ -70,5 +70,17 @@ namespace WindowsFormsApp1
             f6.Show();
             this.Hide();
         }
+
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+            Login f1 = new Login();
+            f1.Show();
+            this.Hide();
+            AktualisFelhasznalok.aktualis_felhasznalo = "";
+            
+            AktualisFelhasznalok.aktualis_jelszo = "";
+            AktualisFelhasznalok.aktualis_tantargy = "";
+            AktualisFelhasznalok.aktualis_osztaly = "";
+        }
     }
 }

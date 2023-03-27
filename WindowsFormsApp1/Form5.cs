@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
             if (myreader.Read())
             {
                 tantargy_id = myreader.GetString(myreader.GetOrdinal("tantargyid"));
-                MessageBox.Show(tantargy_id);
+                //MessageBox.Show(tantargy_id);
             }
             con.Close();
             int presence;
@@ -134,6 +134,9 @@ namespace WindowsFormsApp1
                
 
             } MessageBox.Show("A naplózás sikeres!");
+            hub f3 = new hub();
+            f3.Show();
+            this.Close();
             con.Close();
         }
 

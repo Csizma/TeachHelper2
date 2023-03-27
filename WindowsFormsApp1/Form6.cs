@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
             System.Data.Odbc.OdbcDataReader myreader;
@@ -204,6 +204,43 @@ namespace WindowsFormsApp1
         {
             System.Data.Odbc.OdbcDataReader myreader;
             
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form6_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            hub f3 = new hub();
+            f3.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabelLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tol__TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

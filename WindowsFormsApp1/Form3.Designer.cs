@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.tabelLayoutPanel1 = new WindowsFormsApp1.TabelLayoutPanel();
-            this.tabelLayoutPanel2 = new WindowsFormsApp1.TabelLayoutPanel();
-            this.tabelLayoutPanel3 = new WindowsFormsApp1.TabelLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tabelLayoutPanel2 = new WindowsFormsApp1.TabelLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tabelLayoutPanel3 = new WindowsFormsApp1.TabelLayoutPanel();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
@@ -59,6 +59,17 @@
             this.tabelLayoutPanel1.Size = new System.Drawing.Size(1768, 1015);
             this.tabelLayoutPanel1.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.switch_form;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(4, 600);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1760, 411);
+            this.panel1.TabIndex = 0;
+            // 
             // tabelLayoutPanel2
             // 
             this.tabelLayoutPanel2.BackColor = System.Drawing.Color.White;
@@ -77,6 +88,17 @@
             this.tabelLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.35468F));
             this.tabelLayoutPanel2.Size = new System.Drawing.Size(1760, 588);
             this.tabelLayoutPanel2.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.switch_top;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1752, 131);
+            this.panel2.TabIndex = 0;
             // 
             // tabelLayoutPanel3
             // 
@@ -99,28 +121,6 @@
             this.tabelLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.27632F));
             this.tabelLayoutPanel3.Size = new System.Drawing.Size(1752, 441);
             this.tabelLayoutPanel3.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.switch_form;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 600);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1760, 411);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.switch_top;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1752, 131);
-            this.panel2.TabIndex = 0;
             // 
             // rjButton1
             // 
@@ -186,6 +186,7 @@
             this.rjButton3.TabIndex = 5;
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
             // 
             // hub
             // 
