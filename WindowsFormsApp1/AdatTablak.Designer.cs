@@ -2780,7 +2780,7 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT diak_nev\r\nFROM     diak\r\nWHERE  (osztaly_id = ?)";
+            this._commandCollection[1].CommandText = "SELECT diak_nev, diak_id\r\nFROM     diak\r\nWHERE  (osztaly_id = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
         }
@@ -3121,47 +3121,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
             tableMapping.ColumnMappings.Add("datum", "datum");
             tableMapping.ColumnMappings.Add("jelenlet", "jelenlet");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `jelenlet` WHERE ((`jelenlet_id` = ?) AND ((? = 1 AND `diak_id` IS NULL) OR (`diak_id` = ?)) AND ((? = 1 AND `tantargy_id` IS NULL) OR (`tantargy_id` = ?)) AND ((? = 1 AND `datum` IS NULL) OR (`datum` = ?)) AND ((? = 1 AND `jelenlet` IS NULL) OR (`jelenlet` = ?)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_datum", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelenlet", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `jelenlet` (`jelenlet_id`, `diak_id`, `tantargy_id`, `datum`, `jelenl" +
-                "et`) VALUES (?, ?, ?, ?, ?)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `jelenlet` SET `jelenlet_id` = ?, `diak_id` = ?, `tantargy_id` = ?, `datum` = ?, `jelenlet` = ? WHERE ((`jelenlet_id` = ?) AND ((? = 1 AND `diak_id` IS NULL) OR (`diak_id` = ?)) AND ((? = 1 AND `tantargy_id` IS NULL) OR (`tantargy_id` = ?)) AND ((? = 1 AND `datum` IS NULL) OR (`datum` = ?)) AND ((? = 1 AND `jelenlet` IS NULL) OR (`jelenlet` = ?)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_diak_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "diak_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_datum", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("IsNull_jelenlet", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_jelenlet", global::System.Data.Odbc.OdbcType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "jelenlet", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3174,20 +3133,57 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[1];
+            this._commandCollection = new global::System.Data.Odbc.OdbcCommand[2];
             this._commandCollection[0] = new global::System.Data.Odbc.OdbcCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `jelenlet_id`, `diak_id`, `tantargy_id`, `datum`, `jelenlet` FROM `jelenle" +
-                "t`";
+            this._commandCollection[0].CommandText = "SELECT jelenlet_id, diak_id, tantargy_id, datum, jelenlet\r\nFROM     jelenlet\r\nWHE" +
+                "RE  (datum BETWEEN ? AND ?) AND (tantargy_id = ?) AND (osztaly_id = ?)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum1", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1] = new global::System.Data.Odbc.OdbcCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT jelenlet_id, diak_id, tantargy_id, datum, jelenlet\r\nFROM     jelenlet\r\nWHE" +
+                "RE  (datum BETWEEN ? AND ?) AND (tantargy_id = ?) AND (osztaly_id = ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("datum1", global::System.Data.Odbc.OdbcType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "datum", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("tantargy_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tantargy_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.Odbc.OdbcParameter("osztaly_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "osztaly_id", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AdatTablak.jelenletDataTable dataTable) {
+        public virtual int Fill(AdatTablak.jelenletDataTable dataTable, global::System.Nullable<global::System.DateTime> datum, global::System.Nullable<global::System.DateTime> datum1, global::System.Nullable<int> tantargy_id, global::System.Nullable<int> osztaly_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((datum.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datum.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((datum1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datum1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((tantargy_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(tantargy_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((osztaly_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(osztaly_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -3199,8 +3195,32 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AdatTablak.jelenletDataTable GetData() {
+        public virtual AdatTablak.jelenletDataTable GetData(global::System.Nullable<global::System.DateTime> datum, global::System.Nullable<global::System.DateTime> datum1, global::System.Nullable<int> tantargy_id, global::System.Nullable<int> osztaly_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((datum.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datum.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((datum1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datum1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((tantargy_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(tantargy_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((osztaly_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(osztaly_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             AdatTablak.jelenletDataTable dataTable = new AdatTablak.jelenletDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3209,129 +3229,73 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(AdatTablak.jelenletDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(AdatTablak.jelenletDataTable dataTable, global::System.Nullable<global::System.DateTime> datum, global::System.Nullable<global::System.DateTime> datum1, global::System.Nullable<int> tantargy_id, global::System.Nullable<int> osztaly_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((datum.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datum.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((datum1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datum1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((tantargy_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(tantargy_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((osztaly_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(osztaly_id.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(AdatTablak dataSet) {
-            return this.Adapter.Update(dataSet, "jelenlet");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_jelenlet_id, int Original_diak_id, int Original_tantargy_id, System.DateTime Original_datum, short Original_jelenlet) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_jelenlet_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_diak_id));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_tantargy_id));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_datum));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((short)(Original_jelenlet));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AdatTablak.jelenletDataTable GetDataBy(global::System.Nullable<global::System.DateTime> datum, global::System.Nullable<global::System.DateTime> datum1, global::System.Nullable<int> tantargy_id, global::System.Nullable<int> osztaly_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((datum.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(datum.Value));
             }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
+            if ((datum1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(datum1.Value));
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int jelenlet_id, int diak_id, int tantargy_id, System.DateTime datum, short jelenlet) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(jelenlet_id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(diak_id));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(tantargy_id));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(datum));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(jelenlet));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
+            if ((tantargy_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(tantargy_id.Value));
             }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int jelenlet_id, int diak_id, int tantargy_id, System.DateTime datum, short jelenlet, int Original_jelenlet_id, int Original_diak_id, int Original_tantargy_id, System.DateTime Original_datum, short Original_jelenlet) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(jelenlet_id));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(diak_id));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(tantargy_id));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(datum));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(jelenlet));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_jelenlet_id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_diak_id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_tantargy_id));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_datum));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((short)(Original_jelenlet));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
+            if ((osztaly_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(osztaly_id.Value));
             }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int diak_id, int tantargy_id, System.DateTime datum, short jelenlet, int Original_jelenlet_id, int Original_diak_id, int Original_tantargy_id, System.DateTime Original_datum, short Original_jelenlet) {
-            return this.Update(Original_jelenlet_id, diak_id, tantargy_id, datum, jelenlet, Original_jelenlet_id, Original_diak_id, Original_tantargy_id, Original_datum, Original_jelenlet);
+            AdatTablak.jelenletDataTable dataTable = new AdatTablak.jelenletDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -4430,8 +4394,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
         
         private diakTableAdapter _diakTableAdapter;
         
-        private jelenletTableAdapter _jelenletTableAdapter;
-        
         private osztalyTableAdapter _osztalyTableAdapter;
         
         private tanarTableAdapter _tanarTableAdapter;
@@ -4464,20 +4426,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
             }
             set {
                 this._diakTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public jelenletTableAdapter jelenletTableAdapter {
-            get {
-                return this._jelenletTableAdapter;
-            }
-            set {
-                this._jelenletTableAdapter = value;
             }
         }
         
@@ -4546,10 +4494,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
                             && (this._diakTableAdapter.Connection != null))) {
                     return this._diakTableAdapter.Connection;
                 }
-                if (((this._jelenletTableAdapter != null) 
-                            && (this._jelenletTableAdapter.Connection != null))) {
-                    return this._jelenletTableAdapter.Connection;
-                }
                 if (((this._osztalyTableAdapter != null) 
                             && (this._osztalyTableAdapter.Connection != null))) {
                     return this._osztalyTableAdapter.Connection;
@@ -4578,9 +4522,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
                 if ((this._diakTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._jelenletTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._osztalyTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -4607,15 +4548,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._diakTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._jelenletTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.jelenlet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._jelenletTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4661,14 +4593,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._diakTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._jelenletTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.jelenlet.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._jelenletTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4730,14 +4654,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._jelenletTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.jelenlet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._jelenletTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._diakTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.diak.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4787,11 +4703,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
             }
             if (((this._diakTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._diakTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._jelenletTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._jelenletTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -4849,15 +4760,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
                     if (this._diakTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._diakTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._diakTableAdapter.Adapter);
-                    }
-                }
-                if ((this._jelenletTableAdapter != null)) {
-                    revertConnections.Add(this._jelenletTableAdapter, this._jelenletTableAdapter.Connection);
-                    this._jelenletTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(workConnection));
-                    this._jelenletTableAdapter.Transaction = ((global::System.Data.Odbc.OdbcTransaction)(workTransaction));
-                    if (this._jelenletTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._jelenletTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._jelenletTableAdapter.Adapter);
                     }
                 }
                 if ((this._osztalyTableAdapter != null)) {
@@ -4948,10 +4850,6 @@ namespace WindowsFormsApp1.AdatTablakTableAdapters {
                 if ((this._diakTableAdapter != null)) {
                     this._diakTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._diakTableAdapter]));
                     this._diakTableAdapter.Transaction = null;
-                }
-                if ((this._jelenletTableAdapter != null)) {
-                    this._jelenletTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._jelenletTableAdapter]));
-                    this._jelenletTableAdapter.Transaction = null;
                 }
                 if ((this._osztalyTableAdapter != null)) {
                     this._osztalyTableAdapter.Connection = ((global::System.Data.Odbc.OdbcConnection)(revertConnections[this._osztalyTableAdapter]));

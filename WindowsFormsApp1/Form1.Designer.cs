@@ -389,7 +389,10 @@
             // conTeachHelper
             // 
             this.conTeachHelper.ConnectionString = "Dsn=localhost;uid=root;database=teachhelper;port=3306";
-
+            // 
+            // dataViewManager1
+            // 
+            this.dataViewManager1.DataViewSettingCollectionString = "";
             // 
             // cmdBejelentkezes
             // 

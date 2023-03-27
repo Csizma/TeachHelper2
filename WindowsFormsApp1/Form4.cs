@@ -16,9 +16,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        public static string osztaly_id_ertek;
+        public static int tanar_id_ertek;
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            Osztaly_valaszto.AnimateWindow(this.Handle, 700, Osztaly_valaszto.HOR_NEGATIVE);
             // TODO: This line of code loads data into the 'teachhelperDataSet5.osztaly' table. You can move, or remove it, as needed.
             this.osztalyTableAdapter.Fill(this.AdatTablak.osztaly);
             // TODO: This line of code loads data into the 'teachhelperDataSet5.tantargy' table. You can move, or remove it, as needed.
@@ -64,10 +67,44 @@ namespace WindowsFormsApp1
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
+            dsMent.Parameters[0].Value = osztaly.Text;
+            dsMent.Parameters[1].Value = AktualisFelhasznalok.aktualis_felhasznalo;
+            System.Data.Odbc.OdbcDataReader myreader;
+            odbcConnection1.Open();
+            myreader = dsMent.ExecuteReader();
+
+            if (myreader.Read())
+            {
+                osztaly_id_ertek = myreader.GetString(myreader.GetOrdinal("osztalyid"));
+                tanar_id_ertek =  myreader.GetInt32(myreader.GetOrdinal("tanarid"));
+                //MessageBox.Show(osztaly_id_ertek);
+                //MessageBox.Show(Convert.ToString(tanar_id_ertek));
+                myreader.Close();
+                
+            }
+
+            myreader = dsTantargyid.ExecuteReader();
+            dsTantargyid.Parameters[0].Value = tanar_id_ertek;
+            if (myreader.Read())
+            {
+                string tantargy_id_ertek = myreader.GetString(myreader.GetOrdinal("tantargy_id"));
+                //MessageBox.Show(tantargy_id_ertek);
+                myreader.Close();
+
+            }
+            AktualisFelhasznalok.aktualis_osztaly_id = Convert.ToInt32(osztaly_id_ertek);
+            AktualisFelhasznalok.aktualis_tanar_id = Convert.ToInt32(tanar_id_ertek);
             AktualisFelhasznalok.aktualis_tantargy = tantargy.Text;
             AktualisFelhasznalok.aktualis_osztaly = osztaly.Text;
             Form5 f5 = new Form5();
             f5.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            hub f3 = new hub();
+            f3.Show();
             this.Hide();
         }
     }

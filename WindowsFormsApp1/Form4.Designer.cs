@@ -34,6 +34,7 @@
             this.datum = new System.Windows.Forms.Label();
             this.ido = new System.Windows.Forms.Label();
             this.nap = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabelLayoutPanel1 = new WindowsFormsApp1.TabelLayoutPanel();
             this.tabelLayoutPanel2 = new WindowsFormsApp1.TabelLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,6 +48,8 @@
             this.odbcConnection1 = new System.Data.Odbc.OdbcConnection();
             this.tantargyTableAdapter1 = new WindowsFormsApp1.AdatTablakTableAdapters.tantargyTableAdapter();
             this.osztalyTableAdapter = new WindowsFormsApp1.AdatTablakTableAdapters.osztalyTableAdapter();
+            this.dsMent = new System.Data.Odbc.OdbcCommand();
+            this.dsTantargyid = new System.Data.Odbc.OdbcCommand();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tabelLayoutPanel1.SuspendLayout();
@@ -83,6 +86,7 @@
             this.tableLayoutPanel2.Controls.Add(this.datum, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.ido, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.nap, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -127,6 +131,17 @@
             this.nap.Size = new System.Drawing.Size(246, 70);
             this.nap.TabIndex = 2;
             this.nap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(507, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(247, 39);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "x";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabelLayoutPanel1
             // 
@@ -242,7 +257,7 @@
             // 
             // odbcConnection1
             // 
-            this.odbcConnection1.ConnectionString = "Dsn=localhost;uid=root;database=teachtest;port=3306";
+            this.odbcConnection1.ConnectionString = "Dsn=localhost;uid=root;database=teachhelper;port=3306";
             // 
             // tantargyTableAdapter1
             // 
@@ -252,13 +267,32 @@
             // 
             this.osztalyTableAdapter.ClearBeforeFill = true;
             // 
+            // dsMent
+            // 
+            this.dsMent.CommandText = "SELECT DISTINCT tanar.tanar_id AS tanarid, osztaly.osztaly_id AS osztalyid\r\nFROM " +
+    "    tantargy, tanar, osztaly\r\nWHERE  (osztaly.osztaly_nev = ?) AND (tanar.tanar_" +
+    "felhasznalonev = ?)";
+            this.dsMent.Connection = this.odbcConnection1;
+            this.dsMent.Parameters.AddRange(new System.Data.Odbc.OdbcParameter[] {
+            new System.Data.Odbc.OdbcParameter("osztaly_id", System.Data.Odbc.OdbcType.NVarChar, 20, System.Data.ParameterDirection.InputOutput, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, "11.A I"),
+            new System.Data.Odbc.OdbcParameter("tanar_nev", System.Data.Odbc.OdbcType.NVarChar, 30, System.Data.ParameterDirection.InputOutput, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, "csizmadia.adam")});
+            // 
+            // dsTantargyid
+            // 
+            this.dsTantargyid.CommandText = "SELECT tantargy_id\r\nFROM     tantargy\r\nWHERE  (tanar_id = ?)";
+            this.dsTantargyid.Connection = this.odbcConnection1;
+            this.dsTantargyid.Parameters.AddRange(new System.Data.Odbc.OdbcParameter[] {
+            new System.Data.Odbc.OdbcParameter("tantargyid", System.Data.Odbc.OdbcType.NVarChar, 2, System.Data.ParameterDirection.InputOutput, false, ((byte)(0)), ((byte)(0)), "", System.Data.DataRowVersion.Current, "2")});
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(763, 579);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form6";
@@ -295,5 +329,8 @@
         private System.Windows.Forms.BindingSource osztalyBindingSource;
         private AdatTablakTableAdapters.osztalyTableAdapter osztalyTableAdapter;
         private CustomControls.RJControls.RJButton rjButton1;
+        private System.Data.Odbc.OdbcCommand dsMent;
+        private System.Data.Odbc.OdbcCommand dsTantargyid;
+        private System.Windows.Forms.Button button1;
     }
 }

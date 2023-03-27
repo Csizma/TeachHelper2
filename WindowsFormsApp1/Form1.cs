@@ -55,6 +55,8 @@ namespace WindowsFormsApp1
 
         private void Login_Load(object sender, EventArgs e)
         {
+            String date = DateTime.Now.ToString("yyyy-MM-dd");
+            AktualisFelhasznalok.date = date;
             username.Text = "Felhasználónév";
             password.Text = "Jelszó";
 
